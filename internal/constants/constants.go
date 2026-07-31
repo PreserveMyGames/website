@@ -6,7 +6,7 @@ const (
 	AppName        = "PreserveMyGames"
 	DefaultLocale  = "en"
 	LangCookieName = "lang"
-	AssetVersion   = "1"
+	AssetVersion   = "dev"
 	ContactEmail   = "contact@preservemygames.org"
 	ContactLXMF    = "f489752fbef161c64d65e385a4e9fc74"
 
@@ -52,6 +52,8 @@ const (
 	HSTS      = "max-age=31536000; includeSubDomains"
 
 	StaticCacheControl = "public, max-age=31536000, immutable"
+	PageCacheControl   = "no-cache"
+	DevCacheControl    = "no-cache"
 	SearchCacheControl = "public, max-age=300"
 
 	ReadHeaderTimeout = 5 * time.Second

@@ -19,7 +19,7 @@ import (
 	"github.com/PreserveMyGames/website/internal/validate"
 )
 
-const assetVersion = constants.AssetVersion
+var assetVersion = constants.AssetVersion
 
 type Server struct {
 	cfg     config.Config
@@ -103,7 +103,7 @@ func New(cfg config.Config, bundle *i18n.Bundle, index *blog.Index) (*Server, er
 		i18n:    bundle,
 		blog:    index,
 		engines: engines,
-		static:  staticHandler(staticRoot),
+		static:  staticHandler(staticRoot, cfg.Production()),
 	}
 	if err := s.warmCaches(); err != nil {
 		return nil, err
@@ -375,6 +375,7 @@ func (s *Server) renderPage(w http.ResponseWriter, r *http.Request, contentTempl
 	s.populateLayout(lang, &view)
 
 	w.Header().Set(constants.HeaderContentType, "text/html; charset=utf-8")
+	w.Header().Set(constants.HeaderCacheControl, constants.PageCacheControl)
 
 	err := engine.RenderPage(w, contentTemplate, "layout", &view, func(content []byte) {
 		view.Body = template.HTML(content)
@@ -408,7 +409,7 @@ func (s *Server) filterSearch(lang, query string) []blog.SearchEntry {
 	return out
 }
 
-func staticHandler(root fs.FS) http.Handler {
+func staticHandler(root fs.FS, production bool) http.Handler {
 	inner := http.FileServer(http.FS(root))
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if strings.Contains(r.URL.Path, "..") {
@@ -420,7 +421,11 @@ func staticHandler(root fs.FS) http.Handler {
 			http.NotFound(w, r)
 			return
 		}
-		w.Header().Set(constants.HeaderCacheControl, constants.StaticCacheControl)
+		if production {
+			w.Header().Set(constants.HeaderCacheControl, constants.StaticCacheControl)
+		} else {
+			w.Header().Set(constants.HeaderCacheControl, constants.DevCacheControl)
+		}
 		r2 := r.Clone(r.Context())
 		r2.URL.Path = "/" + p
 		inner.ServeHTTP(w, r2)

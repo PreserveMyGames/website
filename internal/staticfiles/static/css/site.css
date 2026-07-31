@@ -547,6 +547,12 @@ a:hover {
   height: 1.125rem;
   opacity: 0.55;
   pointer-events: none;
+  filter: brightness(0) saturate(100%);
+}
+
+[data-theme="dark"] .blog-search-icon,
+:root:not([data-theme="light"]) .blog-search-icon {
+  filter: brightness(0) saturate(100%) invert(1);
 }
 
 .blog-search-field input {

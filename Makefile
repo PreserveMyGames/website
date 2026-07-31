@@ -5,11 +5,13 @@ IMAGE := preservemygames/website:latest
 DOCKERFILE := docker/Dockerfile
 COMPOSE := docker compose -f docker/docker-compose.yml
 GOSEC := $(shell go env GOPATH)/bin/gosec
+VERSION ?= $(shell git rev-parse --short=12 HEAD 2>/dev/null || echo dev)
+LDFLAGS := -s -w -X github.com/PreserveMyGames/website/internal/web.assetVersion=$(VERSION)
 
 .PHONY: build run test test-race test-fuzz bench vet fmt fix tidy vendor gosec docker-build docker-up docker-down docker-test ci
 
 build:
-	go build -trimpath -ldflags="-s -w" -o $(BIN_DIR)/$(APP_NAME) $(CMD)
+	go build -trimpath -ldflags="$(LDFLAGS)" -o $(BIN_DIR)/$(APP_NAME) $(CMD)
 
 run: build
 	./$(BIN_DIR)/$(APP_NAME)
@@ -51,13 +53,13 @@ gosec:
 	$(GOSEC) -exclude-generated -severity medium -confidence medium -quiet ./...
 
 docker-build:
-	docker build -f $(DOCKERFILE) -t $(IMAGE) .
+	docker build -f $(DOCKERFILE) --build-arg VERSION=$(VERSION) -t $(IMAGE) .
 
 docker-up:
-	$(COMPOSE) up --build -d
+	VERSION=$(VERSION) $(COMPOSE) up --build -d
 
 docker-test:
-	$(COMPOSE) up --build -d --wait
+	VERSION=$(VERSION) $(COMPOSE) up --build -d --wait
 	curl -fsS http://127.0.0.1:8080/healthz
 	curl -fsS -o /dev/null http://127.0.0.1:8080/en/
 	curl -fsS -o /dev/null http://127.0.0.1:8080/en/search-index.json

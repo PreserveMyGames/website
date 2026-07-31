@@ -198,6 +198,26 @@ func TestSearchIndexJSONShape(t *testing.T) {
 	}
 }
 
+func TestPageCacheControl(t *testing.T) {
+	srv := testServer(t)
+	req := httptest.NewRequest(http.MethodGet, "/en/", nil)
+	rec := httptest.NewRecorder()
+	srv.Handler().ServeHTTP(rec, req)
+	if got := rec.Header().Get(constants.HeaderCacheControl); got != constants.PageCacheControl {
+		t.Fatalf("page cache-control: got %q want %q", got, constants.PageCacheControl)
+	}
+}
+
+func TestStaticDevCacheControl(t *testing.T) {
+	srv := testServer(t)
+	req := httptest.NewRequest(http.MethodGet, "/static/css/site.css", nil)
+	rec := httptest.NewRecorder()
+	srv.Handler().ServeHTTP(rec, req)
+	if got := rec.Header().Get(constants.HeaderCacheControl); got != constants.DevCacheControl {
+		t.Fatalf("static cache-control: got %q want %q", got, constants.DevCacheControl)
+	}
+}
+
 func TestRedirectTargetValidation(t *testing.T) {
 	cases := []struct {
 		in   string

@@ -108,6 +108,8 @@ jobs:
           file: docker/Dockerfile
           push: false
           load: true
+          build-args: |
+            VERSION=${{ github.sha }}
 
       - name: Smoke test compose
         run: make docker-test && make docker-down

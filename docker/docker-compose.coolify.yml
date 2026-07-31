@@ -22,6 +22,8 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
+      args:
+        VERSION: ${VERSION:-dev}
     environment:
       PORT: ${PORT:-8080}
       APP_ENV: ${APP_ENV:-production}

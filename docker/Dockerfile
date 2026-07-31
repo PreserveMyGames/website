@@ -13,13 +13,14 @@ COPY . .
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
+ARG VERSION=dev
 RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build \
   -trimpath \
-  -ldflags="-s -w" \
+  -ldflags="-s -w -X github.com/PreserveMyGames/website/internal/web.assetVersion=${VERSION}" \
   -o /out/web \
   ./cmd/web
 
-FROM alpine:3.24@sha256:79ff19e9084a00eece421b2523fb93e22d730e2c0e525905de047e848e56d95f AS runtime
+FROM alpine:3.24@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b AS runtime
 
 RUN apk add --no-cache ca-certificates wget \
   && addgroup -g 65532 -S app \
