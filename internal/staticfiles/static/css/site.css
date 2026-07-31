@@ -146,11 +146,25 @@ a:hover {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-size: 1.125rem;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: -0.02em;
   white-space: nowrap;
+  color: var(--text);
+}
+
+.brand-logo {
+  flex-shrink: 0;
+  filter: brightness(0) saturate(100%);
+}
+
+[data-theme="dark"] .brand-logo,
+:root:not([data-theme="light"]) .brand-logo {
+  filter: brightness(0) saturate(100%) invert(1);
 }
 
 .site-nav {

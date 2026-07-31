@@ -17,6 +17,7 @@
   <meta name="twitter:title" content="{{.Meta.Title}}">
   <meta name="twitter:description" content="{{.Meta.Description}}">
   {{range .Meta.Alternates}}<link rel="alternate" hreflang="{{.Lang}}" href="{{.URL}}">{{end}}
+  <link rel="icon" href="/static/favicon.svg?v={{.AssetVersion}}" type="image/svg+xml">
   <link rel="stylesheet" href="/static/css/site.css?v={{.AssetVersion}}">
   {{if .Meta.JSONLDScript}}<script type="application/ld+json">{{.Meta.JSONLDScript}}</script>{{end}}
 </head>
@@ -29,7 +30,10 @@
   {{end}}
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="/{{.Lang}}/">{{t "site.name"}}</a>
+      <a class="brand" href="/{{.Lang}}/">
+        <img class="brand-logo" src="/static/img/logo.svg?v={{.AssetVersion}}" alt="" width="28" height="28">
+        <span>{{t "site.name"}}</span>
+      </a>
       <nav class="site-nav" aria-label="{{t "nav.primary"}}">
         <a href="/{{.Lang}}/">{{t "nav.home"}}</a>
         <a href="/{{.Lang}}/about">{{t "nav.about"}}</a>

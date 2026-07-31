@@ -47,6 +47,8 @@ func TestRoutes(t *testing.T) {
 	}{
 		{constants.PathHealthz, http.StatusOK, constants.HealthzResponse},
 		{"/en/", http.StatusOK, constants.AppName},
+		{"/static/img/logo.svg", http.StatusOK, "<svg"},
+		{"/static/favicon.svg", http.StatusOK, "<svg"},
 		{"/de/", http.StatusOK, "Spiele verdienen"},
 		{"/ru/", http.StatusOK, "Игры заслуживают"},
 		{"/de/about", http.StatusOK, "Über uns"},
