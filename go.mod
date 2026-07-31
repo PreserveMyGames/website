@@ -4,7 +4,7 @@ go 1.26.5
 
 require (
 	github.com/landlock-lsm/go-landlock v0.9.0
-	github.com/nicksnyder/go-i18n/v2 v2.6.0
+	github.com/nicksnyder/go-i18n/v2 v2.6.1
 	github.com/yuin/goldmark v1.7.13
 	golang.org/x/text v0.33.0
 	gopkg.in/yaml.v3 v3.0.1
