@@ -37,27 +37,28 @@ type SiteNoticeView struct {
 }
 
 type PageView struct {
-	Lang            string
-	Meta            seo.Meta
-	ContentTemplate string
-	PagePath        string
-	Locales         []LocaleOption
-	Body            template.HTML
-	AssetVersion    string
-	WikiURL         string
-	ForumsURL       string
-	Notice          *SiteNoticeView
-	ContactEmail    string
-	ContactBody     string
-	ContactLXMF     string
-	IncludeSearchJS bool
-	Posts           []blog.Post
-	Post            blogPostView
-	Query           string
-	Results         []blog.SearchEntry
-	ErrorStatus     int
-	ErrorTitle      string
-	ErrorLead       string
+	Lang                string
+	Meta                seo.Meta
+	ContentTemplate     string
+	PagePath            string
+	Locales             []LocaleOption
+	Body                template.HTML
+	AssetVersion        string
+	WikiURL             string
+	ForumsURL           string
+	Notice              *SiteNoticeView
+	ContactEmail        string
+	ContactBody         string
+	ContactLXMF         string
+	IncludeSearchJS     bool
+	IncludeBlogSearchJS bool
+	Posts               []blog.Post
+	Post                blogPostView
+	Query               string
+	Results             []blog.SearchEntry
+	ErrorStatus         int
+	ErrorTitle          string
+	ErrorLead           string
 }
 
 type LocaleOption struct {
@@ -255,11 +256,13 @@ func (s *Server) blogIndex(w http.ResponseWriter, r *http.Request, lang string) 
 	title := s.i18n.T(lang, "blog.title") + " | " + s.i18n.T(lang, "site.name")
 	desc := s.i18n.T(lang, "site.tagline")
 	s.renderPage(w, r, "blog_index-content", PageView{
-		Lang:         lang,
-		Meta:         seo.Page(s.cfg.SiteURL, lang, "blog", title, desc, s.cachedAlternates("blog")),
-		PagePath:     "blog",
-		AssetVersion: assetVersion,
-		Posts:        s.blog.Posts(lang),
+		Lang:                lang,
+		Meta:                seo.Page(s.cfg.SiteURL, lang, "blog", title, desc, s.cachedAlternates("blog")),
+		PagePath:            "blog",
+		AssetVersion:        assetVersion,
+		IncludeBlogSearchJS: true,
+		Query:               strings.TrimSpace(r.URL.Query().Get("q")),
+		Posts:               s.blog.Posts(lang),
 	})
 }
 

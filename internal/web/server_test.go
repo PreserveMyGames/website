@@ -56,6 +56,7 @@ func TestRoutes(t *testing.T) {
 		{"/en/contact", http.StatusOK, constants.ContactEmail},
 		{"/en/blog", http.StatusOK, "Welcome to Preserve My Games"},
 		{"/en/blog/2026-07-01-welcome", http.StatusOK, "Welcome to Preserve My Games"},
+		{"/en/blog?q=preservation", http.StatusOK, `value="preservation"`},
 		{"/en/blog/rss.xml", http.StatusOK, "<rss"},
 		{"/en/blog/atom.xml", http.StatusOK, "<feed"},
 		{"/en/search?q=preservation", http.StatusOK, "preservation"},

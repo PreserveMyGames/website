@@ -110,6 +110,7 @@
   <script src="/static/js/theme.js?v={{.AssetVersion}}" defer></script>
   {{if .IncludeSearchJS}}<script src="/static/vendor/fuse/fuse.min.js?v={{.AssetVersion}}" defer></script>
   <script src="/static/js/search.js?v={{.AssetVersion}}" defer></script>{{end}}
+  {{if .IncludeBlogSearchJS}}<script src="/static/js/blog-search.js?v={{.AssetVersion}}" defer></script>{{end}}
 </body>
 </html>
 {{end}}

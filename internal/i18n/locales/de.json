@@ -132,6 +132,34 @@
     "translation": "Aktualisiert"
   },
   {
+    "id": "blog.lead",
+    "translation": "Neuigkeiten und Updates zur Spieleerhaltung."
+  },
+  {
+    "id": "blog.tags",
+    "translation": "Schlagwörter"
+  },
+  {
+    "id": "blog.search_placeholder",
+    "translation": "Beiträge nach Titel, Kurztext oder Schlagwort filtern"
+  },
+  {
+    "id": "blog.search_site",
+    "translation": "Gesamte Website durchsuchen"
+  },
+  {
+    "id": "blog.search_no_results",
+    "translation": "Keine Beiträge passen zu Ihrer Suche."
+  },
+  {
+    "id": "blog.search_match_one",
+    "translation": "1 Beitrag passt"
+  },
+  {
+    "id": "blog.search_match_many",
+    "translation": "%d Beiträge passen"
+  },
+  {
     "id": "search.title",
     "translation": "Suche"
   },

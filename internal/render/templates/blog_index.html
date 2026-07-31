@@ -1,17 +1,60 @@
 {{define "blog_index-content"}}
-<article class="page">
-  <h1>{{t "blog.title"}}</h1>
+<article class="page blog-index">
+  <header class="blog-header">
+    <div>
+      <h1>{{t "blog.title"}}</h1>
+      <p class="blog-lead">{{t "blog.lead"}}</p>
+    </div>
+    <a class="blog-feed-link" href="/{{.Lang}}/blog/rss.xml">{{t "footer.rss"}}</a>
+  </header>
   {{if not .Posts}}
     <p>{{t "blog.empty"}}</p>
   {{else}}
-    <ul class="post-list">
+    <div class="blog-toolbar">
+      <form
+        class="blog-search-form"
+        method="get"
+        action="/{{.Lang}}/search"
+        role="search"
+        data-blog-search-form
+      >
+        <div class="blog-search-field">
+          <img class="blog-search-icon" src="/static/vendor/feather/search.svg" alt="" width="18" height="18">
+          <label class="sr-only" for="blog-q">{{t "blog.search_placeholder"}}</label>
+          <input
+            id="blog-q"
+            name="q"
+            type="search"
+            value="{{.Query}}"
+            placeholder="{{t "blog.search_placeholder"}}"
+            autocomplete="off"
+            data-blog-search-input
+            enterkeyhint="search"
+          >
+        </div>
+        <a class="blog-search-site" href="/{{.Lang}}/search">{{t "blog.search_site"}}</a>
+      </form>
+    </div>
+    <p class="blog-search-status" id="blog-search-status" hidden aria-live="polite"></p>
+    <p class="blog-search-empty" id="blog-search-empty" hidden>{{t "blog.search_no_results"}}</p>
+    <ul
+      class="post-list"
+      id="blog-post-list"
+      data-match-one="{{t "blog.search_match_one"}}"
+      data-match-many="{{t "blog.search_match_many"}}"
+    >
       {{range .Posts}}
-      <li>
+      <li data-search="{{.Title}} {{.Description}}{{range .Tags}} {{.}}{{end}}">
         <a href="/{{$.Lang}}/blog/{{.Slug}}">
           <span class="post-title">{{.Title}}</span>
           <span class="post-meta">{{.Date.Format "2006-01-02"}}{{if .Author}} · {{.Author}}{{end}}</span>
         </a>
         {{if .Description}}<p>{{.Description}}</p>{{end}}
+        {{if .Tags}}
+        <ul class="post-tags" aria-label="{{t "blog.tags"}}">
+          {{range .Tags}}<li>{{.}}</li>{{end}}
+        </ul>
+        {{end}}
       </li>
       {{end}}
     </ul>

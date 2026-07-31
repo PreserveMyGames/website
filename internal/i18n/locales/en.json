@@ -132,6 +132,34 @@
     "translation": "Updated"
   },
   {
+    "id": "blog.lead",
+    "translation": "News and updates on game preservation."
+  },
+  {
+    "id": "blog.tags",
+    "translation": "Tags"
+  },
+  {
+    "id": "blog.search_placeholder",
+    "translation": "Filter posts by title, summary, or tag"
+  },
+  {
+    "id": "blog.search_site",
+    "translation": "Search entire site"
+  },
+  {
+    "id": "blog.search_no_results",
+    "translation": "No posts match your search."
+  },
+  {
+    "id": "blog.search_match_one",
+    "translation": "1 post matches"
+  },
+  {
+    "id": "blog.search_match_many",
+    "translation": "%d posts match"
+  },
+  {
     "id": "search.title",
     "translation": "Search"
   },

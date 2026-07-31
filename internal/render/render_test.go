@@ -30,14 +30,15 @@ func TestEngineExecuteLayout(t *testing.T) {
 	}
 
 	view := struct {
-		Lang            string
-		Body            template.HTML
-		AssetVersion    string
-		WikiURL         string
-		ForumsURL       string
-		Notice          any
-		IncludeSearchJS bool
-		Locales         []struct {
+		Lang                string
+		Body                template.HTML
+		AssetVersion        string
+		WikiURL             string
+		ForumsURL           string
+		Notice              any
+		IncludeSearchJS     bool
+		IncludeBlogSearchJS bool
+		Locales             []struct {
 			Code, Label, URL string
 			Current          bool
 		}

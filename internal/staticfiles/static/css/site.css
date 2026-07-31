@@ -491,6 +491,123 @@ a:hover {
   border-bottom: 1px solid var(--border);
 }
 
+.post-list li.is-hidden {
+  display: none;
+}
+
+.blog-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-lead {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+.blog-feed-link {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.blog-feed-link:hover {
+  color: var(--text);
+}
+
+.blog-toolbar {
+  margin-bottom: 0.75rem;
+}
+
+.blog-search-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.blog-search-field {
+  position: relative;
+  display: flex;
+  flex: 1 1 18rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.blog-search-icon {
+  position: absolute;
+  left: 0.85rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.blog-search-field input {
+  width: 100%;
+  padding: 0.75rem 0.9rem 0.75rem 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.blog-search-field input:focus {
+  outline: 2px solid var(--text);
+  outline-offset: 1px;
+}
+
+.blog-search-site {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.blog-search-site:hover {
+  color: var(--text);
+}
+
+.blog-search-status {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.blog-search-status[hidden],
+.blog-search-empty[hidden] {
+  display: none;
+}
+
+.blog-search-empty {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.65rem 0 0;
+}
+
+.post-tags li {
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
 .post-list a,
 .result-list a {
   text-decoration: none;
