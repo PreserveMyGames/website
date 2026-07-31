@@ -1,0 +1,25 @@
+{{define "blog_post-content"}}
+<article class="page post">
+  <header>
+    <h1>{{.Post.Title}}</h1>
+    <p class="post-meta">
+      <time datetime="{{.Post.Date.Format "2006-01-02"}}">{{.Post.Date.Format "2006-01-02"}}</time>
+      {{if not .Post.Updated.IsZero}}
+      <span class="post-meta-sep" aria-hidden="true">·</span>
+      <span>{{t "blog.updated"}} {{.Post.Updated.Format "2006-01-02"}}</span>
+      {{end}}
+      {{if .Post.Author}}
+      <span class="post-meta-sep" aria-hidden="true">·</span>
+      <span>{{t "blog.by"}}
+        {{if .Post.AuthorURL}}
+        <a href="{{.Post.AuthorURL}}" rel="author">{{.Post.Author}}</a>
+        {{else}}
+        {{.Post.Author}}
+        {{end}}
+      </span>
+      {{end}}
+    </p>
+  </header>
+  <div class="post-body">{{.Post.BodyHTML}}</div>
+</article>
+{{end}}

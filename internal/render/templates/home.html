@@ -1,0 +1,10 @@
+{{define "home-content"}}
+<section class="hero">
+  <h1>{{t "home.headline"}}</h1>
+  <p class="lead">{{t "home.lead"}}</p>
+  <div class="cta-row">
+    <a class="btn primary" href="/{{.Lang}}/blog">{{t "home.cta.blog"}}</a>
+    <a class="btn" href="/{{.Lang}}/about">{{t "home.cta.about"}}</a>
+  </div>
+</section>
+{{end}}

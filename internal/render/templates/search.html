@@ -1,0 +1,26 @@
+{{define "search-content"}}
+<article class="page">
+  <h1>{{t "search.title"}}</h1>
+  <form class="search-form" method="get" action="/{{.Lang}}/search" role="search">
+    <label class="sr-only" for="q">{{t "search.placeholder"}}</label>
+    <input id="q" name="q" type="search" value="{{.Query}}" placeholder="{{t "search.placeholder"}}" autocomplete="off">
+    <button type="submit">{{t "search.submit"}}</button>
+  </form>
+  <div id="search-results" class="search-results" data-index-url="/{{.Lang}}/search-index.json" data-empty="{{t "search.no_results"}}">
+    {{if .Query}}
+      {{if not .Results}}
+        <p>{{t "search.no_results"}}</p>
+      {{else}}
+        <ul class="result-list">
+          {{range .Results}}
+          <li>
+            <a href="{{.URL}}">{{.Title}}</a>
+            {{if .Description}}<p>{{.Description}}</p>{{end}}
+          </li>
+          {{end}}
+        </ul>
+      {{end}}
+    {{end}}
+  </div>
+</article>
+{{end}}

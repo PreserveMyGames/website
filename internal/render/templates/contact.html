@@ -1,0 +1,11 @@
+{{define "contact-content"}}
+<article class="page">
+  <h1>{{t "contact.title"}}</h1>
+  <p>{{.ContactBody}}</p>
+  <p><a href="mailto:{{.ContactEmail}}">{{.ContactEmail}}</a></p>
+  <section class="contact-block">
+    <h2>{{t "contact.reticulum.title"}}</h2>
+    <p class="contact-lxmf"><code>LXMF: {{.ContactLXMF}} ({{t "contact.reticulum.name"}})</code></p>
+  </section>
+</article>
+{{end}}

@@ -1,0 +1,210 @@
+[
+  {
+    "id": "site.name",
+    "translation": "PreserveMyGames"
+  },
+  {
+    "id": "site.tagline",
+    "translation": "Программы, руководства и архивы для сохранения игр на любой платформе, старой и новой."
+  },
+  {
+    "id": "nav.home",
+    "translation": "Главная"
+  },
+  {
+    "id": "nav.about",
+    "translation": "О проекте"
+  },
+  {
+    "id": "nav.blog",
+    "translation": "Блог"
+  },
+  {
+    "id": "nav.wiki",
+    "translation": "Вики"
+  },
+  {
+    "id": "nav.forums",
+    "translation": "Форум"
+  },
+  {
+    "id": "nav.search",
+    "translation": "Поиск"
+  },
+  {
+    "id": "nav.privacy",
+    "translation": "Конфиденциальность"
+  },
+  {
+    "id": "nav.contact",
+    "translation": "Контакты"
+  },
+  {
+    "id": "nav.footer",
+    "translation": "Навигация в подвале"
+  },
+  {
+    "id": "nav.primary",
+    "translation": "Основная навигация"
+  },
+  {
+    "id": "nav.language",
+    "translation": "Язык"
+  },
+  {
+    "id": "a11y.skip_to_content",
+    "translation": "Перейти к содержимому"
+  },
+  {
+    "id": "lang.en",
+    "translation": "Английский"
+  },
+  {
+    "id": "lang.de",
+    "translation": "Немецкий"
+  },
+  {
+    "id": "lang.ru",
+    "translation": "Русский"
+  },
+  {
+    "id": "home.headline",
+    "translation": "Игры заслуживают постоянного дома."
+  },
+  {
+    "id": "home.lead",
+    "translation": "Мы создаём инструменты, пишем руководства и делимся ресурсами, чтобы сообщества могли сохранять игры доступными и в памяти на любой платформе."
+  },
+  {
+    "id": "home.cta.blog",
+    "translation": "Читать блог"
+  },
+  {
+    "id": "home.cta.about",
+    "translation": "Подробнее"
+  },
+  {
+    "id": "about.title",
+    "translation": "О проекте"
+  },
+  {
+    "id": "about.body",
+    "translation": "PreserveMyGames создан Иваном (Sudo-Ivan) для разработки программного обеспечения и руководств по сохранению игр на всех платформах, старых и новых."
+  },
+  {
+    "id": "privacy.title",
+    "translation": "Политика конфиденциальности"
+  },
+  {
+    "id": "privacy.body",
+    "translation": "Мы не используем отслеживание, рекламу и телеметрию. Сайт размещён на наших арендованных серверах IONOS и развёрнут с помощью Coolify. Мы собираем только те данные, которые необходимы для показа страниц и ответа на обращения, которые вы инициируете сами."
+  },
+  {
+    "id": "contact.title",
+    "translation": "Контакты"
+  },
+  {
+    "id": "contact.body",
+    "translation": "Свяжитесь с нами: {{.Email}}."
+  },
+  {
+    "id": "contact.reticulum.title",
+    "translation": "Reticulum Network"
+  },
+  {
+    "id": "contact.reticulum.name",
+    "translation": "Ivan"
+  },
+  {
+    "id": "blog.title",
+    "translation": "Блог"
+  },
+  {
+    "id": "blog.empty",
+    "translation": "Пока нет записей."
+  },
+  {
+    "id": "blog.by",
+    "translation": "Автор"
+  },
+  {
+    "id": "blog.updated",
+    "translation": "Обновлено"
+  },
+  {
+    "id": "search.title",
+    "translation": "Поиск"
+  },
+  {
+    "id": "search.placeholder",
+    "translation": "Поиск по записям и страницам"
+  },
+  {
+    "id": "search.submit",
+    "translation": "Найти"
+  },
+  {
+    "id": "search.no_results",
+    "translation": "Ничего не найдено."
+  },
+  {
+    "id": "theme.toggle",
+    "translation": "Переключить цветовую тему"
+  },
+  {
+    "id": "error.not_found.title",
+    "translation": "Страница не найдена"
+  },
+  {
+    "id": "error.not_found.lead",
+    "translation": "Запрошенная страница не существует или была перемещена."
+  },
+  {
+    "id": "error.server.title",
+    "translation": "Что-то пошло не так"
+  },
+  {
+    "id": "error.server.lead",
+    "translation": "Произошла непредвиденная ошибка. Попробуйте снова через некоторое время."
+  },
+  {
+    "id": "error.method.title",
+    "translation": "Метод не разрешён"
+  },
+  {
+    "id": "error.method.lead",
+    "translation": "Этот сайт принимает для страниц только запросы GET и HEAD."
+  },
+  {
+    "id": "error.home",
+    "translation": "На главную"
+  },
+  {
+    "id": "notice.construction",
+    "translation": "Сайт находится в разработке. Некоторые страницы могут быть незавершены."
+  },
+  {
+    "id": "notice.maintenance",
+    "translation": "Проводится плановое обслуживание. Сайт может быть временно недоступен."
+  },
+  {
+    "id": "notice.info",
+    "translation": "Уведомление сайта."
+  },
+  {
+    "id": "notice.warning",
+    "translation": "Важное уведомление."
+  },
+  {
+    "id": "footer.tagline",
+    "translation": "Программы, руководства и архивы для сохранения игр на любой платформе, старой и новой."
+  },
+  {
+    "id": "footer.rss",
+    "translation": "RSS"
+  },
+  {
+    "id": "footer.copyright",
+    "translation": "© 2026 PreserveMyGames"
+  }
+]

@@ -1,0 +1,29 @@
+name: Content or blog post
+description: Propose new site content
+title: "[Content]: "
+labels:
+  - content
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What content should be added or changed?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Blog post
+        - Static page
+        - Translation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: draft
+    attributes:
+      label: Draft text or outline
+      description: Optional draft content or bullet outline

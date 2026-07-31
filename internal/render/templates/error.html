@@ -1,0 +1,11 @@
+{{define "error-content"}}
+<article class="page error-page">
+  <p class="error-code">{{.ErrorStatus}}</p>
+  <h1>{{.ErrorTitle}}</h1>
+  <p class="error-lead">{{.ErrorLead}}</p>
+  <div class="cta-row">
+    <a class="btn primary" href="/{{.Lang}}/">{{t "error.home"}}</a>
+    <a class="btn" href="/{{.Lang}}/contact">{{t "nav.contact"}}</a>
+  </div>
+</article>
+{{end}}

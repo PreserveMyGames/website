@@ -1,0 +1,39 @@
+x-common-security: &common-security
+  read_only: true
+  security_opt:
+    - no-new-privileges:true
+  cap_drop:
+    - ALL
+  tmpfs:
+    - /tmp:mode=1777,size=64m
+
+x-common-limits: &common-limits
+  deploy:
+    resources:
+      limits:
+        cpus: "1.0"
+        memory: 256M
+      reservations:
+        cpus: "0.10"
+        memory: 64M
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      PORT: ${PORT:-8080}
+      APP_ENV: ${APP_ENV:-production}
+      SITE_URL: ${SITE_URL:-https://preservemygames.org}
+      CONTACT_EMAIL: ${CONTACT_EMAIL:-contact@preservemygames.org}
+      ACCESS_LOG: ${ACCESS_LOG:-false}
+      GODEBUG: multipathtcp=0
+    <<: [*common-security, *common-limits]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped

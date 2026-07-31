@@ -1,0 +1,210 @@
+[
+  {
+    "id": "site.name",
+    "translation": "PreserveMyGames"
+  },
+  {
+    "id": "site.tagline",
+    "translation": "Software, guides, and archives for preserving games on every platform, old and new."
+  },
+  {
+    "id": "nav.home",
+    "translation": "Home"
+  },
+  {
+    "id": "nav.about",
+    "translation": "About"
+  },
+  {
+    "id": "nav.blog",
+    "translation": "Blog"
+  },
+  {
+    "id": "nav.wiki",
+    "translation": "Wiki"
+  },
+  {
+    "id": "nav.forums",
+    "translation": "Forums"
+  },
+  {
+    "id": "nav.search",
+    "translation": "Search"
+  },
+  {
+    "id": "nav.privacy",
+    "translation": "Privacy"
+  },
+  {
+    "id": "nav.contact",
+    "translation": "Contact"
+  },
+  {
+    "id": "nav.footer",
+    "translation": "Footer navigation"
+  },
+  {
+    "id": "nav.primary",
+    "translation": "Primary navigation"
+  },
+  {
+    "id": "nav.language",
+    "translation": "Language"
+  },
+  {
+    "id": "a11y.skip_to_content",
+    "translation": "Skip to content"
+  },
+  {
+    "id": "lang.en",
+    "translation": "English"
+  },
+  {
+    "id": "lang.de",
+    "translation": "German"
+  },
+  {
+    "id": "lang.ru",
+    "translation": "Russian"
+  },
+  {
+    "id": "home.headline",
+    "translation": "Games deserve a lasting home."
+  },
+  {
+    "id": "home.lead",
+    "translation": "We build tools, write guides, and share resources so communities can keep games playable and remembered across every platform."
+  },
+  {
+    "id": "home.cta.blog",
+    "translation": "Read the blog"
+  },
+  {
+    "id": "home.cta.about",
+    "translation": "Learn more"
+  },
+  {
+    "id": "about.title",
+    "translation": "About"
+  },
+  {
+    "id": "about.body",
+    "translation": "PreserveMyGames was created by Ivan (Sudo-Ivan) to build software and guides for game preservation across every platform, old and new."
+  },
+  {
+    "id": "privacy.title",
+    "translation": "Privacy Policy"
+  },
+  {
+    "id": "privacy.body",
+    "translation": "We do not use tracking, ads, or telemetry of any kind. This site is hosted on our own rented IONOS servers and deployed with Coolify. We collect only what is required to serve pages and respond to contact requests you initiate."
+  },
+  {
+    "id": "contact.title",
+    "translation": "Contact"
+  },
+  {
+    "id": "contact.body",
+    "translation": "Reach the team at {{.Email}}."
+  },
+  {
+    "id": "contact.reticulum.title",
+    "translation": "Reticulum Network"
+  },
+  {
+    "id": "contact.reticulum.name",
+    "translation": "Ivan"
+  },
+  {
+    "id": "blog.title",
+    "translation": "Blog"
+  },
+  {
+    "id": "blog.empty",
+    "translation": "No posts yet."
+  },
+  {
+    "id": "blog.by",
+    "translation": "By"
+  },
+  {
+    "id": "blog.updated",
+    "translation": "Updated"
+  },
+  {
+    "id": "search.title",
+    "translation": "Search"
+  },
+  {
+    "id": "search.placeholder",
+    "translation": "Search posts and pages"
+  },
+  {
+    "id": "search.submit",
+    "translation": "Search"
+  },
+  {
+    "id": "search.no_results",
+    "translation": "No results found."
+  },
+  {
+    "id": "theme.toggle",
+    "translation": "Toggle color theme"
+  },
+  {
+    "id": "error.not_found.title",
+    "translation": "Page not found"
+  },
+  {
+    "id": "error.not_found.lead",
+    "translation": "The page you requested does not exist or may have moved."
+  },
+  {
+    "id": "error.server.title",
+    "translation": "Something went wrong"
+  },
+  {
+    "id": "error.server.lead",
+    "translation": "We hit an unexpected problem. Please try again in a moment."
+  },
+  {
+    "id": "error.method.title",
+    "translation": "Method not allowed"
+  },
+  {
+    "id": "error.method.lead",
+    "translation": "This site only accepts GET and HEAD requests for pages."
+  },
+  {
+    "id": "error.home",
+    "translation": "Go home"
+  },
+  {
+    "id": "notice.construction",
+    "translation": "This site is under construction. Some pages may be incomplete."
+  },
+  {
+    "id": "notice.maintenance",
+    "translation": "Scheduled maintenance is in progress. The site may be briefly unavailable."
+  },
+  {
+    "id": "notice.info",
+    "translation": "Site notice."
+  },
+  {
+    "id": "notice.warning",
+    "translation": "Important notice."
+  },
+  {
+    "id": "footer.tagline",
+    "translation": "Software, guides, and archives for preserving games on every platform, old and new."
+  },
+  {
+    "id": "footer.rss",
+    "translation": "RSS"
+  },
+  {
+    "id": "footer.copyright",
+    "translation": "© 2026 PreserveMyGames"
+  }
+]

@@ -1,0 +1,210 @@
+[
+  {
+    "id": "site.name",
+    "translation": "PreserveMyGames"
+  },
+  {
+    "id": "site.tagline",
+    "translation": "Software, Anleitungen und Archive zur Erhaltung von Spielen auf jeder Plattform, alt und neu."
+  },
+  {
+    "id": "nav.home",
+    "translation": "Startseite"
+  },
+  {
+    "id": "nav.about",
+    "translation": "Über uns"
+  },
+  {
+    "id": "nav.blog",
+    "translation": "Blog"
+  },
+  {
+    "id": "nav.wiki",
+    "translation": "Wiki"
+  },
+  {
+    "id": "nav.forums",
+    "translation": "Foren"
+  },
+  {
+    "id": "nav.search",
+    "translation": "Suche"
+  },
+  {
+    "id": "nav.privacy",
+    "translation": "Datenschutz"
+  },
+  {
+    "id": "nav.contact",
+    "translation": "Kontakt"
+  },
+  {
+    "id": "nav.footer",
+    "translation": "Fußzeilen-Navigation"
+  },
+  {
+    "id": "nav.primary",
+    "translation": "Hauptnavigation"
+  },
+  {
+    "id": "nav.language",
+    "translation": "Sprache"
+  },
+  {
+    "id": "a11y.skip_to_content",
+    "translation": "Zum Inhalt springen"
+  },
+  {
+    "id": "lang.en",
+    "translation": "Englisch"
+  },
+  {
+    "id": "lang.de",
+    "translation": "Deutsch"
+  },
+  {
+    "id": "lang.ru",
+    "translation": "Russisch"
+  },
+  {
+    "id": "home.headline",
+    "translation": "Spiele verdienen ein dauerhaftes Zuhause."
+  },
+  {
+    "id": "home.lead",
+    "translation": "Wir entwickeln Werkzeuge, schreiben Anleitungen und teilen Ressourcen, damit Communities Spiele auf jeder Plattform spielbar und in Erinnerung halten können."
+  },
+  {
+    "id": "home.cta.blog",
+    "translation": "Blog lesen"
+  },
+  {
+    "id": "home.cta.about",
+    "translation": "Mehr erfahren"
+  },
+  {
+    "id": "about.title",
+    "translation": "Über uns"
+  },
+  {
+    "id": "about.body",
+    "translation": "PreserveMyGames wurde von Ivan (Sudo-Ivan) gegründet, um Software und Anleitungen zur Spieleerhaltung auf allen Plattformen, alt und neu, bereitzustellen."
+  },
+  {
+    "id": "privacy.title",
+    "translation": "Datenschutzerklärung"
+  },
+  {
+    "id": "privacy.body",
+    "translation": "Wir verwenden kein Tracking, keine Werbung und keine Telemetrie. Diese Website wird auf unseren gemieteten IONOS-Servern gehostet und mit Coolify bereitgestellt. Wir erheben nur Daten, die zum Ausliefern der Seiten und zur Beantwortung von Kontaktanfragen, die Sie selbst initiieren, erforderlich sind."
+  },
+  {
+    "id": "contact.title",
+    "translation": "Kontakt"
+  },
+  {
+    "id": "contact.body",
+    "translation": "Schreiben Sie uns unter {{.Email}}."
+  },
+  {
+    "id": "contact.reticulum.title",
+    "translation": "Reticulum Network"
+  },
+  {
+    "id": "contact.reticulum.name",
+    "translation": "Ivan"
+  },
+  {
+    "id": "blog.title",
+    "translation": "Blog"
+  },
+  {
+    "id": "blog.empty",
+    "translation": "Noch keine Beiträge."
+  },
+  {
+    "id": "blog.by",
+    "translation": "Von"
+  },
+  {
+    "id": "blog.updated",
+    "translation": "Aktualisiert"
+  },
+  {
+    "id": "search.title",
+    "translation": "Suche"
+  },
+  {
+    "id": "search.placeholder",
+    "translation": "Beiträge und Seiten durchsuchen"
+  },
+  {
+    "id": "search.submit",
+    "translation": "Suchen"
+  },
+  {
+    "id": "search.no_results",
+    "translation": "Keine Ergebnisse gefunden."
+  },
+  {
+    "id": "theme.toggle",
+    "translation": "Farbschema umschalten"
+  },
+  {
+    "id": "error.not_found.title",
+    "translation": "Seite nicht gefunden"
+  },
+  {
+    "id": "error.not_found.lead",
+    "translation": "Die angeforderte Seite existiert nicht oder wurde verschoben."
+  },
+  {
+    "id": "error.server.title",
+    "translation": "Etwas ist schiefgelaufen"
+  },
+  {
+    "id": "error.server.lead",
+    "translation": "Es ist ein unerwartetes Problem aufgetreten. Bitte versuchen Sie es gleich erneut."
+  },
+  {
+    "id": "error.method.title",
+    "translation": "Methode nicht erlaubt"
+  },
+  {
+    "id": "error.method.lead",
+    "translation": "Diese Website akzeptiert für Seiten nur GET- und HEAD-Anfragen."
+  },
+  {
+    "id": "error.home",
+    "translation": "Zur Startseite"
+  },
+  {
+    "id": "notice.construction",
+    "translation": "Diese Website befindet sich im Aufbau. Einige Seiten sind noch unvollständig."
+  },
+  {
+    "id": "notice.maintenance",
+    "translation": "Geplante Wartung läuft. Die Website kann kurzzeitig nicht erreichbar sein."
+  },
+  {
+    "id": "notice.info",
+    "translation": "Hinweis zur Website."
+  },
+  {
+    "id": "notice.warning",
+    "translation": "Wichtiger Hinweis."
+  },
+  {
+    "id": "footer.tagline",
+    "translation": "Software, Anleitungen und Archive zur Erhaltung von Spielen auf jeder Plattform, alt und neu."
+  },
+  {
+    "id": "footer.rss",
+    "translation": "RSS"
+  },
+  {
+    "id": "footer.copyright",
+    "translation": "© 2026 PreserveMyGames"
+  }
+]

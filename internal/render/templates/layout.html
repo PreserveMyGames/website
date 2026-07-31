@@ -1,0 +1,115 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html lang="{{.Lang}}" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{.Meta.Title}}</title>
+  <meta name="description" content="{{.Meta.Description}}">
+  <link rel="canonical" href="{{.Meta.Canonical}}">
+  <meta property="og:title" content="{{.Meta.Title}}">
+  <meta property="og:description" content="{{.Meta.Description}}">
+  <meta property="og:url" content="{{.Meta.Canonical}}">
+  <meta property="og:type" content="{{.Meta.OGType}}">
+  <meta property="og:locale" content="{{.Meta.Locale}}">
+  {{if .Meta.OGImage}}<meta property="og:image" content="{{.Meta.OGImage}}">{{end}}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{.Meta.Title}}">
+  <meta name="twitter:description" content="{{.Meta.Description}}">
+  {{range .Meta.Alternates}}<link rel="alternate" hreflang="{{.Lang}}" href="{{.URL}}">{{end}}
+  <link rel="stylesheet" href="/static/css/site.css?v={{.AssetVersion}}">
+  {{if .Meta.JSONLDScript}}<script type="application/ld+json">{{.Meta.JSONLDScript}}</script>{{end}}
+</head>
+<body>
+  <a class="skip-link" href="#main">{{t "a11y.skip_to_content"}}</a>
+  {{if .Notice}}
+  <div class="site-notice site-notice-{{.Notice.Kind}}" role="status">
+    <div class="wrap site-notice-inner">{{.Notice.Message}}</div>
+  </div>
+  {{end}}
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/{{.Lang}}/">{{t "site.name"}}</a>
+      <nav class="site-nav" aria-label="{{t "nav.primary"}}">
+        <a href="/{{.Lang}}/">{{t "nav.home"}}</a>
+        <a href="/{{.Lang}}/about">{{t "nav.about"}}</a>
+        <a href="/{{.Lang}}/blog">{{t "nav.blog"}}</a>
+        <a href="{{.WikiURL}}" rel="noopener noreferrer">{{t "nav.wiki"}}</a>
+        <a href="{{.ForumsURL}}" rel="noopener noreferrer">{{t "nav.forums"}}</a>
+        <a href="/{{.Lang}}/contact">{{t "nav.contact"}}</a>
+      </nav>
+      <div class="header-tools">
+        <div class="locale-menu-wrap" data-locale-menu>
+          <button
+            type="button"
+            class="locale-btn"
+            data-locale-trigger
+            aria-expanded="false"
+            aria-controls="locale-panel"
+            aria-haspopup="listbox"
+            id="locale-trigger"
+          >
+            <img class="locale-btn-icon" src="/static/vendor/feather/globe.svg" alt="" width="18" height="18">
+            <span class="locale-btn-label">{{range .Locales}}{{if .Current}}{{.Label}}{{end}}{{end}}</span>
+            <img class="locale-btn-chevron" src="/static/vendor/feather/chevron-down.svg" alt="" width="16" height="16">
+          </button>
+          <div
+            class="locale-panel"
+            id="locale-panel"
+            data-locale-panel
+            role="listbox"
+            aria-labelledby="locale-trigger"
+            hidden
+          >
+            {{range .Locales}}
+            {{if .Current}}
+            <span class="locale-option is-current" role="option" aria-selected="true" lang="{{.Code}}">{{.Label}}</span>
+            {{else}}
+            <a class="locale-option" role="option" href="{{.URL}}" hreflang="{{.Code}}" lang="{{.Code}}">{{.Label}}</a>
+            {{end}}
+            {{end}}
+          </div>
+        </div>
+        <noscript>
+          <nav class="locale-fallback" aria-label="{{t "nav.language"}}">
+            {{range .Locales}}
+            {{if .Current}}
+            <span lang="{{.Code}}">{{.Label}}</span>
+            {{else}}
+            <a href="{{.URL}}" hreflang="{{.Code}}" lang="{{.Code}}">{{.Label}}</a>
+            {{end}}
+            {{end}}
+          </nav>
+        </noscript>
+        <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="{{t "theme.toggle"}}">
+          <img class="icon-sun" src="/static/vendor/feather/sun.svg" alt="" width="20" height="20">
+          <img class="icon-moon" src="/static/vendor/feather/moon.svg" alt="" width="20" height="20">
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="site-main">
+    <div class="wrap">
+      {{.Body}}
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-tagline">{{t "footer.tagline"}}</p>
+      <nav class="footer-nav" aria-label="{{t "nav.footer"}}">
+        <a href="/{{.Lang}}/about">{{t "nav.about"}}</a>
+        <a href="/{{.Lang}}/blog">{{t "nav.blog"}}</a>
+        <a href="/{{.Lang}}/blog/rss.xml">{{t "footer.rss"}}</a>
+        <a href="/{{.Lang}}/privacy">{{t "nav.privacy"}}</a>
+        <a href="/{{.Lang}}/contact">{{t "nav.contact"}}</a>
+      </nav>
+      <p class="footer-copy">{{t "footer.copyright"}}</p>
+    </div>
+  </footer>
+  <script src="/static/js/locale.js?v={{.AssetVersion}}" defer></script>
+  <script src="/static/js/theme.js?v={{.AssetVersion}}" defer></script>
+  {{if .IncludeSearchJS}}<script src="/static/vendor/fuse/fuse.min.js?v={{.AssetVersion}}" defer></script>
+  <script src="/static/js/search.js?v={{.AssetVersion}}" defer></script>{{end}}
+</body>
+</html>
+{{end}}
