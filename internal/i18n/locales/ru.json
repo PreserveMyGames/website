@@ -60,6 +60,10 @@
     "translation": "Язык"
   },
   {
+    "id": "nav.menu",
+    "translation": "Меню"
+  },
+  {
     "id": "a11y.skip_to_content",
     "translation": "Перейти к содержимому"
   },

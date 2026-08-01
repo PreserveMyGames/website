@@ -60,6 +60,10 @@
     "translation": "Language"
   },
   {
+    "id": "nav.menu",
+    "translation": "Menu"
+  },
+  {
     "id": "a11y.skip_to_content",
     "translation": "Skip to content"
   },
