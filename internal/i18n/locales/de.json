@@ -64,6 +64,10 @@
     "translation": "Menü"
   },
   {
+    "id": "nav.close",
+    "translation": "Menü schließen"
+  },
+  {
     "id": "a11y.skip_to_content",
     "translation": "Zum Inhalt springen"
   },

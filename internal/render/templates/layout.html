@@ -22,6 +22,7 @@
   {{if .Meta.JSONLDScript}}<script type="application/ld+json">{{.Meta.JSONLDScript}}</script>{{end}}
 </head>
 <body>
+  <input type="checkbox" id="nav-drawer-toggle" class="nav-drawer-toggle">
   <a class="skip-link" href="#main">{{t "a11y.skip_to_content"}}</a>
   {{if .Notice}}
   <div class="site-notice site-notice-{{.Notice.Kind}}" role="status">
@@ -35,23 +36,11 @@
         <span>{{t "site.name"}}</span>
       </a>
       <div class="header-actions">
-        <details class="nav-menu">
-          <summary class="icon-btn nav-menu-toggle" aria-label="{{t "nav.menu"}}">
-            <img class="nav-menu-icon nav-menu-icon--open" src="/static/vendor/feather/menu.svg" alt="" width="20" height="20">
-            <img class="nav-menu-icon nav-menu-icon--close" src="/static/vendor/feather/x.svg" alt="" width="20" height="20">
-          </summary>
-          <nav class="site-nav" aria-label="{{t "nav.primary"}}">
-            <a href="/{{.Lang}}/">{{t "nav.home"}}</a>
-            <a href="/{{.Lang}}/blog">{{t "nav.blog"}}</a>
-            <a href="{{.StoreURL}}" rel="noopener noreferrer">{{t "nav.store"}}</a>
-            <a href="{{.WikiURL}}" rel="noopener noreferrer">{{t "nav.wiki"}}</a>
-            <a href="{{.ForumsURL}}" rel="noopener noreferrer">{{t "nav.forums"}}</a>
-            <a href="/{{.Lang}}/donate">{{t "nav.donate"}}</a>
-            <a href="/{{.Lang}}/contact">{{t "nav.contact"}}</a>
-          </nav>
-        </details>
+        <nav class="site-nav site-nav--desktop" aria-label="{{t "nav.primary"}}">
+          {{template "nav-links" .}}
+        </nav>
         <div class="header-tools">
-        <div class="locale-menu-wrap" data-locale-menu>
+          <div class="locale-menu-wrap" data-locale-menu>
           <button
             type="button"
             class="icon-btn locale-btn"
@@ -96,10 +85,27 @@
           <img class="icon-sun" src="/static/vendor/feather/sun.svg" alt="" width="20" height="20">
           <img class="icon-moon" src="/static/vendor/feather/moon.svg" alt="" width="20" height="20">
         </button>
-      </div>
+        </div>
+        <label for="nav-drawer-toggle" class="icon-btn nav-drawer-burger" aria-label="{{t "nav.menu"}}">
+          <img src="/static/vendor/feather/menu.svg" alt="" width="20" height="20">
+        </label>
       </div>
     </div>
   </header>
+  <label for="nav-drawer-toggle" class="nav-drawer-backdrop" aria-hidden="true"></label>
+  <aside class="nav-drawer" aria-label="{{t "nav.menu"}}">
+    <div class="nav-drawer-panel">
+      <div class="nav-drawer-header">
+        <span class="nav-drawer-title">{{t "nav.menu"}}</span>
+        <label for="nav-drawer-toggle" class="icon-btn nav-drawer-close" aria-label="{{t "nav.close"}}">
+          <img src="/static/vendor/feather/x.svg" alt="" width="20" height="20">
+        </label>
+      </div>
+      <nav class="site-nav site-nav--drawer" aria-label="{{t "nav.primary"}}">
+        {{template "nav-links" .}}
+      </nav>
+    </div>
+  </aside>
   <main id="main" class="site-main">
     <div class="wrap">
       {{.Body}}
@@ -120,6 +126,7 @@
     </div>
   </footer>
   <script src="/static/js/locale.js?v={{.AssetVersion}}" defer></script>
+  <script src="/static/js/nav.js?v={{.AssetVersion}}" defer></script>
   <script src="/static/js/theme.js?v={{.AssetVersion}}" defer></script>
   {{if .IncludeSearchJS}}<script src="/static/vendor/fuse/fuse.min.js?v={{.AssetVersion}}" defer></script>
   <script src="/static/js/search.js?v={{.AssetVersion}}" defer></script>{{end}}
