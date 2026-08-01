@@ -11,7 +11,7 @@ func TestBundleTranslations(t *testing.T) {
 	}
 
 	got := bundle.T("en", "site.name")
-	if got != "PreserveMyGames" {
+	if got != "Preserve My Games" {
 		t.Fatalf("site.name: got %q", got)
 	}
 }

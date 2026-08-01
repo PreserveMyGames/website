@@ -25,6 +25,9 @@ func TestNavExternalLinks(t *testing.T) {
 	if !strings.Contains(body, `href="https://forums.example.com"`) {
 		t.Fatal("expected forums link in navbar")
 	}
+	if !strings.Contains(body, ">Preserve My Games</span>") {
+		t.Fatal("expected brand title Preserve My Games")
+	}
 
 	start := strings.Index(body, `<nav class="site-nav"`)
 	if start < 0 {
@@ -35,6 +38,9 @@ func TestNavExternalLinks(t *testing.T) {
 		t.Fatal("missing primary nav end")
 	}
 	nav := body[start : start+end]
+	if !strings.Contains(nav, "/donate") {
+		t.Fatal("expected donate link in primary navigation")
+	}
 	if strings.Contains(nav, "/privacy") {
 		t.Fatal("privacy should not appear in primary navigation")
 	}

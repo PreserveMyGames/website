@@ -1,0 +1,15 @@
+{{define "donate-content"}}
+<article class="page">
+  <h1>{{t "donate.title"}}</h1>
+  <p>{{t "donate.body"}}</p>
+  <section class="donate-block">
+    <h2>{{t "donate.monero.title"}}</h2>
+    <p>{{t "donate.monero.body"}}</p>
+    <p class="donate-address"><code>{{.DonateMonero}}</code></p>
+  </section>
+  <section class="donate-block">
+    <h2>{{t "donate.kofi.title"}}</h2>
+    <p><a href="{{.DonateKoFiURL}}" rel="noopener noreferrer">{{.DonateKoFiURL}}</a></p>
+  </section>
+</article>
+{{end}}

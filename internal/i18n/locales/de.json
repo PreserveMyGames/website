@@ -1,7 +1,7 @@
 [
   {
     "id": "site.name",
-    "translation": "PreserveMyGames"
+    "translation": "Preserve My Games"
   },
   {
     "id": "site.tagline",
@@ -40,6 +40,10 @@
     "translation": "Kontakt"
   },
   {
+    "id": "nav.donate",
+    "translation": "Spenden"
+  },
+  {
     "id": "nav.footer",
     "translation": "Fußzeilen-Navigation"
   },
@@ -73,31 +77,223 @@
   },
   {
     "id": "home.lead",
-    "translation": "Wir entwickeln Werkzeuge, schreiben Anleitungen und teilen Ressourcen, damit Communities Spiele auf jeder Plattform spielbar und in Erinnerung halten können."
+    "translation": "Wir bauen Software, schreiben Anleitungen und veröffentlichen Metadaten, damit Spiele spielbar bleiben. Module, Discs, PC-Releases, Emulatoren, was auch immer noch im Regal steht."
   },
   {
     "id": "home.cta.blog",
-    "translation": "Blog lesen"
+    "translation": "Zum Blog"
+  },
+  {
+    "id": "home.cta.wiki",
+    "translation": "Zum Wiki"
   },
   {
     "id": "home.cta.about",
-    "translation": "Mehr erfahren"
+    "translation": "Über das Projekt"
+  },
+  {
+    "id": "home.recent.title",
+    "translation": "Neue Beiträge"
+  },
+  {
+    "id": "home.recent.all",
+    "translation": "Alle Beiträge"
+  },
+  {
+    "id": "home.work.title",
+    "translation": "Woran wir arbeiten"
+  },
+  {
+    "id": "home.work.software.title",
+    "translation": "Software"
+  },
+  {
+    "id": "home.work.software.body",
+    "translation": "Software für die Erhaltung von Spielen und Mods, plus Tools, die wir auf dem Weg bauen. Quellcode veröffentlichen wir, wenn wir das Projekt pflegen."
+  },
+  {
+    "id": "home.work.guides.title",
+    "translation": "Anleitungen"
+  },
+  {
+    "id": "home.work.guides.body",
+    "translation": "Anleitungen zum Erhalten von Spielen, Mods und Medien. Für Leute, die die Arbeit selbst machen."
+  },
+  {
+    "id": "home.work.metadata.title",
+    "translation": "Metadaten"
+  },
+  {
+    "id": "home.work.metadata.body",
+    "translation": "Kostenlose, offene Spiele-Metadaten ohne Konto. Alternative zu IGDB und anderen geschlossenen Katalogen ohne vollen Export."
+  },
+  {
+    "id": "home.elsewhere.title",
+    "translation": "Wiki und Foren"
+  },
+  {
+    "id": "home.elsewhere.wiki.title",
+    "translation": "Wiki"
+  },
+  {
+    "id": "home.elsewhere.wiki.body",
+    "translation": "Längere Dokumentation und Referenz. Eigene Seite, gleiches Projekt."
+  },
+  {
+    "id": "home.elsewhere.forums.title",
+    "translation": "Foren"
+  },
+  {
+    "id": "home.elsewhere.forums.body",
+    "translation": "Diskussionen für Fragen, die nicht in einen Blogpost passen. E-Mail geht auch."
+  },
+  {
+    "id": "home.donate.title",
+    "translation": "Projekt unterstützen"
+  },
+  {
+    "id": "home.donate.body",
+    "translation": "Danke, dass du nutzt, was wir bauen. Spenden helfen beim Hosting und finanzieren mehr Erhaltungssoftware, Anleitungen und offene Metadaten."
+  },
+  {
+    "id": "home.donate.cta",
+    "translation": "Spenden"
+  },
+  {
+    "id": "donate.title",
+    "translation": "Spenden"
+  },
+  {
+    "id": "donate.body",
+    "translation": "Danke für deine Unterstützung. Spenden fließen in Server, Domains und Zeit für Erhaltungsarbeit. Alles hier bleibt kostenlos nutzbar."
+  },
+  {
+    "id": "donate.monero.title",
+    "translation": "Monero (XMR)"
+  },
+  {
+    "id": "donate.monero.body",
+    "translation": "Adresse unten kopieren. Vor dem Senden jedes Zeichen prüfen."
+  },
+  {
+    "id": "donate.kofi.title",
+    "translation": "Ko-fi (Karte über Stripe)"
   },
   {
     "id": "about.title",
     "translation": "Über uns"
   },
   {
-    "id": "about.body",
-    "translation": "PreserveMyGames wurde von Ivan (Sudo-Ivan) gegründet, um Software und Anleitungen zur Spieleerhaltung auf allen Plattformen, alt und neu, bereitzustellen."
+    "id": "about.lead",
+    "translation": "Preserve My Games hilft dabei, Spiele und Mods spielbar und dokumentiert zu halten. Wir bauen Software, schreiben Anleitungen und veröffentlichen offene Metadaten ohne Konto."
+  },
+  {
+    "id": "about.founder",
+    "translation": "Ivan (Sudo-Ivan) hat das Projekt gestartet und pflegt heute den Großteil des Codes und der Texte."
+  },
+  {
+    "id": "about.work.title",
+    "translation": "Woran wir arbeiten"
+  },
+  {
+    "id": "about.software.body",
+    "translation": "Software für die Erhaltung von Spielen und Mods: Hilfen beim Dumpen, Prüftools, Katalog-Utilities und Programme, die wir selbst nutzen. Quellcode veröffentlichen wir, wenn wir das Repository pflegen."
+  },
+  {
+    "id": "about.guides.body",
+    "translation": "Anleitungen für Einsteiger und für Leute, die einen erprobten Ablauf suchen. Themen: Hardware, Dumps, Emulatoren, Mods und langfristige Aufbewahrung."
+  },
+  {
+    "id": "about.metadata.body",
+    "translation": "Kostenlose, offene Spiele-Metadaten als Alternative zu IGDB und ähnlichen geschlossenen Datenbanken. Kein Login, keine API-Schlüssel, Daten zum Herunterladen und Weiterverwenden."
+  },
+  {
+    "id": "about.site.title",
+    "translation": "Diese Website"
+  },
+  {
+    "id": "about.site.body",
+    "translation": "preservemygames.org ist der Einstieg für Neuigkeiten und Projektupdates. Seiten funktionieren ohne JavaScript. Keine Werbung, keine Analytics."
+  },
+  {
+    "id": "about.elsewhere.title",
+    "translation": "Wiki und Foren"
+  },
+  {
+    "id": "about.elsewhere.wiki",
+    "translation": "ausführliche Dokumentation und Referenz"
+  },
+  {
+    "id": "about.elsewhere.forums",
+    "translation": "Diskussion, wenn Blogpost oder E-Mail nicht reichen"
   },
   {
     "id": "privacy.title",
     "translation": "Datenschutzerklärung"
   },
   {
-    "id": "privacy.body",
-    "translation": "Wir verwenden kein Tracking, keine Werbung und keine Telemetrie. Diese Website wird auf unseren gemieteten IONOS-Servern gehostet und mit Coolify bereitgestellt. Wir erheben nur Daten, die zum Ausliefern der Seiten und zur Beantwortung von Kontaktanfragen, die Sie selbst initiieren, erforderlich sind."
+    "id": "privacy.lead",
+    "translation": "Diese Erklärung beschreibt, wie Preserve My Games mit Informationen umgeht, wenn Sie preservemygames.org besuchen."
+  },
+  {
+    "id": "privacy.scope.title",
+    "translation": "Geltungsbereich"
+  },
+  {
+    "id": "privacy.scope.body",
+    "translation": "Preserve My Games betreibt preservemygames.org. Diese Erklärung gilt nur für diese Website. Sie gilt nicht für andere verlinkte Angebote mit eigenen Richtlinien."
+  },
+  {
+    "id": "privacy.data.title",
+    "translation": "Automatisch verarbeitete Daten"
+  },
+  {
+    "id": "privacy.data.body",
+    "translation": "Beim Abruf einer Seite erhält unser Server technische Daten, die zur Auslieferung nötig sind, darunter IP-Adresse, Browser-Kennung, angeforderte URL und Zeitpunkt. Kurzlebige Server-Logs können für Betrieb und Sicherheit genutzt werden. Diese Daten werden nicht für Werbung oder Marketingprofile verwendet."
+  },
+  {
+    "id": "privacy.no_track.title",
+    "translation": "Was wir nicht einsetzen"
+  },
+  {
+    "id": "privacy.no_track.body",
+    "translation": "Wir setzen auf dieser Website keine Analytics, Werbung, Social Widgets oder Tracking Dritter ein. Wir verkaufen keine personenbezogenen Daten."
+  },
+  {
+    "id": "privacy.storage.title",
+    "translation": "Cookies und lokale Speicherung"
+  },
+  {
+    "id": "privacy.storage.body",
+    "translation": "Seiten funktionieren ohne JavaScript. Wenn Sie den Theme-Schalter nutzen, speichert Ihr Browser die Hell- oder Dunkel-Einstellung lokal. Wir setzen keine Tracking-Cookies. Erkennen wir ein Sprach-Cookie Ihres Browsers, nutzen wir es nur für die Weiterleitung von der Startseite zur passenden Sprachversion."
+  },
+  {
+    "id": "privacy.third_party.title",
+    "translation": "Externe Links"
+  },
+  {
+    "id": "privacy.third_party.body",
+    "translation": "Einige Seiten verlinken zu Diensten Dritter, etwa Ko-fi auf der Spendenseite. Diese Anbieter haben eigene Nutzungs- und Datenschutzbedingungen. Wir kontrollieren nicht, welche Daten sie erheben."
+  },
+  {
+    "id": "privacy.contact.title",
+    "translation": "Kontakt"
+  },
+  {
+    "id": "privacy.contact.body",
+    "translation": "Wenn Sie uns per E-Mail schreiben, erhalten wir Ihre Nachricht und die von Ihnen angegebenen Angaben. Wir nutzen diese Daten nur zum Lesen und Beantworten. Fragen zu dieser Erklärung richten Sie bitte an"
+  },
+  {
+    "id": "privacy.changes.title",
+    "translation": "Änderungen"
+  },
+  {
+    "id": "privacy.changes.body",
+    "translation": "Wir können diese Erklärung gelegentlich anpassen. Das Datum unten zeigt die letzte Überarbeitung."
+  },
+  {
+    "id": "privacy.updated",
+    "translation": "Zuletzt aktualisiert: 31. Juli 2026"
   },
   {
     "id": "contact.title",
@@ -233,6 +429,6 @@
   },
   {
     "id": "footer.copyright",
-    "translation": "© 2026 PreserveMyGames"
+    "translation": "© 2026 Preserve My Games"
   }
 ]

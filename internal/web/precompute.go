@@ -75,7 +75,7 @@ func (s *Server) warmCaches() error {
 		}
 	}
 
-	staticSlugs := []string{"", "about", "privacy", "contact", "blog", "search"}
+	staticSlugs := []string{"", "about", "privacy", "contact", "donate", "blog", "search"}
 	for _, slug := range staticSlugs {
 		s.cache.alternates[slug] = s.buildAlternates(slug)
 	}
@@ -156,13 +156,13 @@ func (s *Server) buildSearchEntries(lang string) []blog.SearchEntry {
 	entries = append(entries,
 		blog.SearchEntry{
 			Title:       s.i18n.T(lang, "about.title"),
-			Description: s.i18n.T(lang, "about.body"),
+			Description: s.i18n.T(lang, "about.lead"),
 			URL:         s.i18n.LocalPath(lang, "about"),
 			Type:        "page",
 		},
 		blog.SearchEntry{
 			Title:       s.i18n.T(lang, "privacy.title"),
-			Description: s.i18n.T(lang, "privacy.body"),
+			Description: s.i18n.T(lang, "privacy.lead"),
 			URL:         s.i18n.LocalPath(lang, "privacy"),
 			Type:        "page",
 		},
@@ -170,6 +170,12 @@ func (s *Server) buildSearchEntries(lang string) []blog.SearchEntry {
 			Title:       s.i18n.T(lang, "contact.title"),
 			Description: s.i18n.T(lang, "contact.body"),
 			URL:         s.i18n.LocalPath(lang, "contact"),
+			Type:        "page",
+		},
+		blog.SearchEntry{
+			Title:       s.i18n.T(lang, "donate.title"),
+			Description: s.i18n.T(lang, "donate.body"),
+			URL:         s.i18n.LocalPath(lang, "donate"),
 			Type:        "page",
 		},
 	)

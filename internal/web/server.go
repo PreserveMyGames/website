@@ -50,6 +50,8 @@ type PageView struct {
 	ContactEmail        string
 	ContactBody         string
 	ContactLXMF         string
+	DonateMonero        string
+	DonateKoFiURL       string
 	IncludeSearchJS     bool
 	IncludeBlogSearchJS bool
 	Posts               []blog.Post
@@ -138,6 +140,9 @@ func (s *Server) buildMux() http.Handler {
 		mux.HandleFunc("GET /"+locale+"/contact", func(w http.ResponseWriter, r *http.Request) {
 			s.contact(w, r, locale)
 		})
+		mux.HandleFunc("GET /"+locale+"/donate", func(w http.ResponseWriter, r *http.Request) {
+			s.donate(w, r, locale)
+		})
 		mux.HandleFunc("GET /"+locale+"/blog", func(w http.ResponseWriter, r *http.Request) {
 			s.blogIndex(w, r, locale)
 		})
@@ -193,12 +198,27 @@ func (s *Server) home(w http.ResponseWriter, r *http.Request, lang string) {
 		Meta:         seo.Home(s.cfg.SiteURL, lang, title, desc, s.cachedAlternates("")),
 		PagePath:     "",
 		AssetVersion: assetVersion,
+		Posts:        recentPosts(s.blog.Posts(lang), 3),
 	})
+}
+
+func recentPosts(all []blog.Post, limit int) []blog.Post {
+	if limit <= 0 || len(all) == 0 {
+		return nil
+	}
+	if len(all) <= limit {
+		out := make([]blog.Post, len(all))
+		copy(out, all)
+		return out
+	}
+	out := make([]blog.Post, limit)
+	copy(out, all[:limit])
+	return out
 }
 
 func (s *Server) about(w http.ResponseWriter, r *http.Request, lang string) {
 	title := s.i18n.T(lang, "about.title") + " | " + s.i18n.T(lang, "site.name")
-	desc := s.i18n.T(lang, "about.body")
+	desc := s.i18n.T(lang, "about.lead")
 	s.renderPage(w, r, "about-content", PageView{
 		Lang:         lang,
 		Meta:         seo.Page(s.cfg.SiteURL, lang, "about", title, desc, s.cachedAlternates("about")),
@@ -209,12 +229,13 @@ func (s *Server) about(w http.ResponseWriter, r *http.Request, lang string) {
 
 func (s *Server) privacy(w http.ResponseWriter, r *http.Request, lang string) {
 	title := s.i18n.T(lang, "privacy.title") + " | " + s.i18n.T(lang, "site.name")
-	desc := s.i18n.T(lang, "privacy.body")
+	desc := s.i18n.T(lang, "privacy.lead")
 	s.renderPage(w, r, "privacy-content", PageView{
 		Lang:         lang,
 		Meta:         seo.Page(s.cfg.SiteURL, lang, "privacy", title, desc, s.cachedAlternates("privacy")),
 		PagePath:     "privacy",
 		AssetVersion: assetVersion,
+		ContactEmail: s.cfg.ContactEmail,
 	})
 }
 
@@ -232,9 +253,22 @@ func (s *Server) contact(w http.ResponseWriter, r *http.Request, lang string) {
 	})
 }
 
+func (s *Server) donate(w http.ResponseWriter, r *http.Request, lang string) {
+	title := s.i18n.T(lang, "donate.title") + " | " + s.i18n.T(lang, "site.name")
+	desc := s.i18n.T(lang, "donate.body")
+	s.renderPage(w, r, "donate-content", PageView{
+		Lang:         lang,
+		Meta:         seo.Page(s.cfg.SiteURL, lang, "donate", title, desc, s.cachedAlternates("donate")),
+		PagePath:     "donate",
+		AssetVersion: assetVersion,
+	})
+}
+
 func (s *Server) populateLayout(lang string, view *PageView) {
 	view.WikiURL = s.cfg.WikiURL()
 	view.ForumsURL = s.cfg.ForumsURL()
+	view.DonateMonero = constants.DonateMonero
+	view.DonateKoFiURL = constants.DonateKoFiURL
 	view.Notice = s.siteNotice(lang)
 	view.Locales = s.cachedLocales(lang, view.PagePath)
 	view.AssetVersion = assetVersion

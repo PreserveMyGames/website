@@ -1,7 +1,7 @@
 [
   {
     "id": "site.name",
-    "translation": "PreserveMyGames"
+    "translation": "Preserve My Games"
   },
   {
     "id": "site.tagline",
@@ -40,6 +40,10 @@
     "translation": "Contact"
   },
   {
+    "id": "nav.donate",
+    "translation": "Donate"
+  },
+  {
     "id": "nav.footer",
     "translation": "Footer navigation"
   },
@@ -73,31 +77,223 @@
   },
   {
     "id": "home.lead",
-    "translation": "We build tools, write guides, and share resources so communities can keep games playable and remembered across every platform."
+    "translation": "We build software, write guides, and publish metadata so games stay playable. Cartridges, discs, PC releases, emulators, whatever you have in the closet."
   },
   {
     "id": "home.cta.blog",
     "translation": "Read the blog"
   },
   {
+    "id": "home.cta.wiki",
+    "translation": "Read the wiki"
+  },
+  {
     "id": "home.cta.about",
-    "translation": "Learn more"
+    "translation": "About the project"
+  },
+  {
+    "id": "home.recent.title",
+    "translation": "Recent posts"
+  },
+  {
+    "id": "home.recent.all",
+    "translation": "All posts"
+  },
+  {
+    "id": "home.work.title",
+    "translation": "What we are working on"
+  },
+  {
+    "id": "home.work.software.title",
+    "translation": "Software"
+  },
+  {
+    "id": "home.work.software.body",
+    "translation": "Software for game and mod preservation, and related tools we build along the way. We publish source when we maintain the project."
+  },
+  {
+    "id": "home.work.guides.title",
+    "translation": "Guides"
+  },
+  {
+    "id": "home.work.guides.body",
+    "translation": "How-to guides for preserving games, mods, and media. Written for people doing the work themselves."
+  },
+  {
+    "id": "home.work.metadata.title",
+    "translation": "Metadata"
+  },
+  {
+    "id": "home.work.metadata.body",
+    "translation": "Free and open game metadata with no account required. An alternative to IGDB and other closed catalogs you cannot fully export or reuse."
+  },
+  {
+    "id": "home.elsewhere.title",
+    "translation": "Wiki and forums"
+  },
+  {
+    "id": "home.elsewhere.wiki.title",
+    "translation": "Wiki"
+  },
+  {
+    "id": "home.elsewhere.wiki.body",
+    "translation": "Longer docs and reference pages. Separate site, same people."
+  },
+  {
+    "id": "home.elsewhere.forums.title",
+    "translation": "Forums"
+  },
+  {
+    "id": "home.elsewhere.forums.body",
+    "translation": "Threads for questions that do not fit a blog post. Email still works if you prefer it."
+  },
+  {
+    "id": "home.donate.title",
+    "translation": "Support the project"
+  },
+  {
+    "id": "home.donate.body",
+    "translation": "Thank you for using what we build. Donations help cover hosting and fund more preservation software, guides, and open metadata."
+  },
+  {
+    "id": "home.donate.cta",
+    "translation": "Donate"
+  },
+  {
+    "id": "donate.title",
+    "translation": "Donate"
+  },
+  {
+    "id": "donate.body",
+    "translation": "Thank you for supporting the project. Donations go toward servers, domains, and time spent on preservation work. Everything here stays free to use."
+  },
+  {
+    "id": "donate.monero.title",
+    "translation": "Monero (XMR)"
+  },
+  {
+    "id": "donate.monero.body",
+    "translation": "Copy the address below. Check every character before you send."
+  },
+  {
+    "id": "donate.kofi.title",
+    "translation": "Ko-fi (card via Stripe)"
   },
   {
     "id": "about.title",
     "translation": "About"
   },
   {
-    "id": "about.body",
-    "translation": "PreserveMyGames was created by Ivan (Sudo-Ivan) to build software and guides for game preservation across every platform, old and new."
+    "id": "about.lead",
+    "translation": "Preserve My Games helps people keep games and mods playable and documented. We build software, write guides, and publish open metadata that does not require an account."
+  },
+  {
+    "id": "about.founder",
+    "translation": "Ivan (Sudo-Ivan) started the project and maintains most of the code and writing today."
+  },
+  {
+    "id": "about.work.title",
+    "translation": "What we work on"
+  },
+  {
+    "id": "about.software.body",
+    "translation": "Software for game and mod preservation: dumping helpers, verification tools, catalog utilities, and other programs we use in our own work. We publish source when we maintain the repository."
+  },
+  {
+    "id": "about.guides.body",
+    "translation": "Guides for people learning preservation or looking for a tested process. They cover hardware, dumping, emulators, mods, and long-term storage."
+  },
+  {
+    "id": "about.metadata.body",
+    "translation": "Free and open game metadata as an alternative to IGDB and similar closed databases. No login, no API keys, and data you can download and reuse."
+  },
+  {
+    "id": "about.site.title",
+    "translation": "This site"
+  },
+  {
+    "id": "about.site.body",
+    "translation": "preservemygames.org is the main entry point for news and project updates. Pages work without JavaScript. We do not run ads or analytics."
+  },
+  {
+    "id": "about.elsewhere.title",
+    "translation": "Wiki and forums"
+  },
+  {
+    "id": "about.elsewhere.wiki",
+    "translation": "long-form documentation and reference"
+  },
+  {
+    "id": "about.elsewhere.forums",
+    "translation": "discussion when a blog post or email is not enough"
   },
   {
     "id": "privacy.title",
     "translation": "Privacy Policy"
   },
   {
-    "id": "privacy.body",
-    "translation": "We do not use tracking, ads, or telemetry of any kind. This site is hosted on our own rented IONOS servers and deployed with Coolify. We collect only what is required to serve pages and respond to contact requests you initiate."
+    "id": "privacy.lead",
+    "translation": "This policy explains how Preserve My Games handles information when you visit preservemygames.org."
+  },
+  {
+    "id": "privacy.scope.title",
+    "translation": "Scope"
+  },
+  {
+    "id": "privacy.scope.body",
+    "translation": "Preserve My Games operates preservemygames.org. This policy applies to this website only. It does not cover other sites we link to, which maintain their own policies."
+  },
+  {
+    "id": "privacy.data.title",
+    "translation": "Information processed automatically"
+  },
+  {
+    "id": "privacy.data.body",
+    "translation": "When you request a page, our server receives technical data needed to deliver the site, including your IP address, browser user agent, the requested path, and the time of the request. We may keep short-lived server logs for operations and security. We do not use this data for advertising or to build marketing profiles."
+  },
+  {
+    "id": "privacy.no_track.title",
+    "translation": "What we do not use"
+  },
+  {
+    "id": "privacy.no_track.body",
+    "translation": "We do not run analytics, advertising, social widgets, or third-party tracking on this site. We do not sell personal information."
+  },
+  {
+    "id": "privacy.storage.title",
+    "translation": "Cookies and local storage"
+  },
+  {
+    "id": "privacy.storage.body",
+    "translation": "Pages are designed to work without JavaScript. If you use the theme toggle, your browser stores a light or dark preference in local storage on your device. We do not set tracking cookies. If your browser sends a language cookie we recognize, we may use it only when redirecting from the site root to a locale path."
+  },
+  {
+    "id": "privacy.third_party.title",
+    "translation": "External links"
+  },
+  {
+    "id": "privacy.third_party.body",
+    "translation": "Some pages link to third-party services, such as Ko-fi on the donate page. Those providers operate under their own terms and privacy policies. We do not control what they collect."
+  },
+  {
+    "id": "privacy.contact.title",
+    "translation": "Contact"
+  },
+  {
+    "id": "privacy.contact.body",
+    "translation": "If you email us, we receive your message and any details you include. We use that information only to read and reply. Questions about this policy can be sent to"
+  },
+  {
+    "id": "privacy.changes.title",
+    "translation": "Changes"
+  },
+  {
+    "id": "privacy.changes.body",
+    "translation": "We may update this policy from time to time. The date below shows when it was last revised."
+  },
+  {
+    "id": "privacy.updated",
+    "translation": "Last updated July 31, 2026"
   },
   {
     "id": "contact.title",
@@ -233,6 +429,6 @@
   },
   {
     "id": "footer.copyright",
-    "translation": "© 2026 PreserveMyGames"
+    "translation": "© 2026 Preserve My Games"
   }
 ]

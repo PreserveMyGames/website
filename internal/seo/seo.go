@@ -39,14 +39,14 @@ func Home(siteURL, lang, title, description string, alternates []Alternate) Meta
 			{
 				"@context":    "https://schema.org",
 				"@type":       "WebSite",
-				"name":        "PreserveMyGames",
+				"name":        constants.AppName,
 				"url":         canonical,
 				"description": description,
 			},
 			{
 				"@context": "https://schema.org",
 				"@type":    "Organization",
-				"name":     "PreserveMyGames",
+				"name":     constants.AppName,
 				"url":      strings.TrimRight(siteURL, "/"),
 				"email":    constants.ContactEmail,
 			},
@@ -130,6 +130,7 @@ func SitemapURLs(siteURL string, locales []string, blogSlugs map[string][]string
 			fmt.Sprintf("%s/%s/about", base, lang),
 			fmt.Sprintf("%s/%s/privacy", base, lang),
 			fmt.Sprintf("%s/%s/contact", base, lang),
+			fmt.Sprintf("%s/%s/donate", base, lang),
 			fmt.Sprintf("%s/%s/blog", base, lang),
 			fmt.Sprintf("%s/%s/search", base, lang),
 		)

@@ -3,8 +3,52 @@
   <h1>{{t "home.headline"}}</h1>
   <p class="lead">{{t "home.lead"}}</p>
   <div class="cta-row">
-    <a class="btn primary" href="/{{.Lang}}/blog">{{t "home.cta.blog"}}</a>
+    <a class="btn primary" href="{{.WikiURL}}" rel="noopener noreferrer">{{t "home.cta.wiki"}}</a>
     <a class="btn" href="/{{.Lang}}/about">{{t "home.cta.about"}}</a>
   </div>
+</section>
+
+<section class="home-section" aria-labelledby="home-work-title">
+  <h2 id="home-work-title">{{t "home.work.title"}}</h2>
+  <div class="card-grid">
+    <article class="home-card">
+      <h3>{{t "home.work.software.title"}}</h3>
+      <p>{{t "home.work.software.body"}}</p>
+    </article>
+    <article class="home-card">
+      <h3>{{t "home.work.guides.title"}}</h3>
+      <p>{{t "home.work.guides.body"}}</p>
+    </article>
+    <article class="home-card">
+      <h3>{{t "home.work.metadata.title"}}</h3>
+      <p>{{t "home.work.metadata.body"}}</p>
+    </article>
+  </div>
+</section>
+
+{{if .Posts}}
+<section class="home-section" aria-labelledby="home-recent-title">
+  <div class="home-section-head">
+    <h2 id="home-recent-title">{{t "home.recent.title"}}</h2>
+    <a class="home-section-link" href="/{{.Lang}}/blog">{{t "home.recent.all"}}</a>
+  </div>
+  <ul class="home-post-list">
+    {{range .Posts}}
+    <li>
+      <a href="/{{$.Lang}}/blog/{{.Slug}}">
+        <span class="post-title">{{.Title}}</span>
+        <span class="post-meta">{{.Date.Format "2006-01-02"}}</span>
+      </a>
+      {{if .Description}}<p>{{.Description}}</p>{{end}}
+    </li>
+    {{end}}
+  </ul>
+</section>
+{{end}}
+
+<section class="home-section home-donate">
+  <h2>{{t "home.donate.title"}}</h2>
+  <p>{{t "home.donate.body"}}</p>
+  <a class="btn" href="/{{.Lang}}/donate">{{t "home.donate.cta"}}</a>
 </section>
 {{end}}

@@ -1,7 +1,7 @@
 [
   {
     "id": "site.name",
-    "translation": "PreserveMyGames"
+    "translation": "Preserve My Games"
   },
   {
     "id": "site.tagline",
@@ -40,6 +40,10 @@
     "translation": "Контакты"
   },
   {
+    "id": "nav.donate",
+    "translation": "Поддержать"
+  },
+  {
     "id": "nav.footer",
     "translation": "Навигация в подвале"
   },
@@ -73,31 +77,223 @@
   },
   {
     "id": "home.lead",
-    "translation": "Мы создаём инструменты, пишем руководства и делимся ресурсами, чтобы сообщества могли сохранять игры доступными и в памяти на любой платформе."
+    "translation": "Мы пишем софт, гайды и выкладываем метаданные, чтобы игры оставались запускаемыми. Картриджи, диски, порт на ПК, эмуляторы, что угодно из коробки в шкафу."
   },
   {
     "id": "home.cta.blog",
-    "translation": "Читать блог"
+    "translation": "В блог"
+  },
+  {
+    "id": "home.cta.wiki",
+    "translation": "В вики"
   },
   {
     "id": "home.cta.about",
-    "translation": "Подробнее"
+    "translation": "О проекте"
+  },
+  {
+    "id": "home.recent.title",
+    "translation": "Свежие записи"
+  },
+  {
+    "id": "home.recent.all",
+    "translation": "Все записи"
+  },
+  {
+    "id": "home.work.title",
+    "translation": "Над чем мы работаем"
+  },
+  {
+    "id": "home.work.software.title",
+    "translation": "Софт"
+  },
+  {
+    "id": "home.work.software.body",
+    "translation": "Софт для сохранения игр и модов, плюс связанные утилиты. Исходники публикуем, если проект ведём сами."
+  },
+  {
+    "id": "home.work.guides.title",
+    "translation": "Гайды"
+  },
+  {
+    "id": "home.work.guides.body",
+    "translation": "Гайды по сохранению игр, модов и медиа. Для тех, кто делает это сам."
+  },
+  {
+    "id": "home.work.metadata.title",
+    "translation": "Метаданные"
+  },
+  {
+    "id": "home.work.metadata.body",
+    "translation": "Бесплатные открытые метаданные об играх без регистрации. Альтернатива IGDB и другим закрытым каталогам без полного экспорта."
+  },
+  {
+    "id": "home.elsewhere.title",
+    "translation": "Вики и форум"
+  },
+  {
+    "id": "home.elsewhere.wiki.title",
+    "translation": "Вики"
+  },
+  {
+    "id": "home.elsewhere.wiki.body",
+    "translation": "Длинные статьи и справочник. Отдельный сайт, те же люди."
+  },
+  {
+    "id": "home.elsewhere.forums.title",
+    "translation": "Форум"
+  },
+  {
+    "id": "home.elsewhere.forums.body",
+    "translation": "Обсуждения, когда пост в блог не подходит. Почта тоже ок."
+  },
+  {
+    "id": "home.donate.title",
+    "translation": "Поддержать проект"
+  },
+  {
+    "id": "home.donate.body",
+    "translation": "Спасибо, что пользуетесь тем, что мы делаем. Донаты помогают с хостингом и дают время на софт, гайды и открытые метаданные."
+  },
+  {
+    "id": "home.donate.cta",
+    "translation": "Поддержать"
+  },
+  {
+    "id": "donate.title",
+    "translation": "Поддержать"
+  },
+  {
+    "id": "donate.body",
+    "translation": "Спасибо за поддержку проекта. Донаты идут на серверы, домены и время на работу по сохранению. Всё здесь остаётся бесплатным."
+  },
+  {
+    "id": "donate.monero.title",
+    "translation": "Monero (XMR)"
+  },
+  {
+    "id": "donate.monero.body",
+    "translation": "Скопируйте адрес ниже. Перед отправкой проверьте каждый символ."
+  },
+  {
+    "id": "donate.kofi.title",
+    "translation": "Ko-fi (карта через Stripe)"
   },
   {
     "id": "about.title",
     "translation": "О проекте"
   },
   {
-    "id": "about.body",
-    "translation": "PreserveMyGames создан Иваном (Sudo-Ivan) для разработки программного обеспечения и руководств по сохранению игр на всех платформах, старых и новых."
+    "id": "about.lead",
+    "translation": "Preserve My Games помогает сохранять игры и моды играбельными и задокументированными. Мы пишем софт, гайды и публикуем открытые метаданные без регистрации."
+  },
+  {
+    "id": "about.founder",
+    "translation": "Иван (Sudo-Ivan) запустил проект и сейчас ведёт большую часть кода и текстов."
+  },
+  {
+    "id": "about.work.title",
+    "translation": "Над чем мы работаем"
+  },
+  {
+    "id": "about.software.body",
+    "translation": "Софт для сохранения игр и модов: помощь со снятием дампов, проверка, каталоги и утилиты, которыми пользуемся сами. Исходники публикуем, если ведём репозиторий."
+  },
+  {
+    "id": "about.guides.body",
+    "translation": "Гайды для тех, кто только начинает, и для тех, кому нужен проверенный процесс. Железо, дампы, эмуляторы, моды и долгосрочное хранение."
+  },
+  {
+    "id": "about.metadata.body",
+    "translation": "Бесплатные открытые метаданные об играх как альтернатива IGDB и другим закрытым базам. Без логина, без API-ключей, с возможностью скачать и переиспользовать."
+  },
+  {
+    "id": "about.site.title",
+    "translation": "Этот сайт"
+  },
+  {
+    "id": "about.site.body",
+    "translation": "preservemygames.org — главная точка входа для новостей и обновлений. Страницы работают без JavaScript. Без рекламы и аналитики."
+  },
+  {
+    "id": "about.elsewhere.title",
+    "translation": "Вики и форум"
+  },
+  {
+    "id": "about.elsewhere.wiki",
+    "translation": "подробная документация и справочник"
+  },
+  {
+    "id": "about.elsewhere.forums",
+    "translation": "обсуждения, когда поста в блоге или почты мало"
   },
   {
     "id": "privacy.title",
     "translation": "Политика конфиденциальности"
   },
   {
-    "id": "privacy.body",
-    "translation": "Мы не используем отслеживание, рекламу и телеметрию. Сайт размещён на наших арендованных серверах IONOS и развёрнут с помощью Coolify. Мы собираем только те данные, которые необходимы для показа страниц и ответа на обращения, которые вы инициируете сами."
+    "id": "privacy.lead",
+    "translation": "Эта политика описывает, как Preserve My Games обрабатывает информацию при посещении preservemygames.org."
+  },
+  {
+    "id": "privacy.scope.title",
+    "translation": "Область действия"
+  },
+  {
+    "id": "privacy.scope.body",
+    "translation": "Preserve My Games управляет сайтом preservemygames.org. Политика относится только к этому сайту. Она не распространяется на другие ресурсы, на которые мы ссылаемся и у которых свои правила."
+  },
+  {
+    "id": "privacy.data.title",
+    "translation": "Автоматически обрабатываемые данные"
+  },
+  {
+    "id": "privacy.data.body",
+    "translation": "При запросе страницы сервер получает технические данные, необходимые для доставки контента: IP-адрес, идентификатор браузера, запрошенный путь и время запроса. Кратковременные журналы могут использоваться для работы и безопасности. Эти данные не применяются для рекламы или маркетинговых профилей."
+  },
+  {
+    "id": "privacy.no_track.title",
+    "translation": "Чего мы не используем"
+  },
+  {
+    "id": "privacy.no_track.body",
+    "translation": "На сайте нет аналитики, рекламы, социальных виджетов и стороннего отслеживания. Мы не продаём персональные данные."
+  },
+  {
+    "id": "privacy.storage.title",
+    "translation": "Файлы cookie и локальное хранилище"
+  },
+  {
+    "id": "privacy.storage.body",
+    "translation": "Страницы рассчитаны на работу без JavaScript. При переключении темы браузер сохраняет светлую или тёмную настройку локально. Мы не устанавливаем отслеживающие cookie. Если браузер передаёт распознаваемый языковой cookie, мы используем его только при перенаправлении с корня сайта на нужную локаль."
+  },
+  {
+    "id": "privacy.third_party.title",
+    "translation": "Внешние ссылки"
+  },
+  {
+    "id": "privacy.third_party.body",
+    "translation": "На некоторых страницах есть ссылки на сторонние сервисы, например Ko-fi на странице пожертвований. У этих поставщиков свои условия и политики конфиденциальности. Мы не контролируем, какие данные они собирают."
+  },
+  {
+    "id": "privacy.contact.title",
+    "translation": "Контакт"
+  },
+  {
+    "id": "privacy.contact.body",
+    "translation": "Если вы пишете нам по электронной почте, мы получаем ваше сообщение и указанные вами сведения. Мы используем их только для чтения и ответа. Вопросы по этой политике направляйте на"
+  },
+  {
+    "id": "privacy.changes.title",
+    "translation": "Изменения"
+  },
+  {
+    "id": "privacy.changes.body",
+    "translation": "Мы можем время от времени обновлять эту политику. Дата ниже указывает последнюю редакцию."
+  },
+  {
+    "id": "privacy.updated",
+    "translation": "Последнее обновление: 31 июля 2026 г."
   },
   {
     "id": "contact.title",
@@ -233,6 +429,6 @@
   },
   {
     "id": "footer.copyright",
-    "translation": "© 2026 PreserveMyGames"
+    "translation": "© 2026 Preserve My Games"
   }
 ]

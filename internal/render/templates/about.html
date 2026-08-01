@@ -1,6 +1,28 @@
 {{define "about-content"}}
-<article class="page">
+<article class="page about-page">
   <h1>{{t "about.title"}}</h1>
-  <p>{{t "about.body"}}</p>
+  <p class="lead">{{t "about.lead"}}</p>
+  <p>{{t "about.founder"}}</p>
+
+  <section class="about-section">
+    <h2>{{t "about.work.title"}}</h2>
+    <h3>{{t "home.work.software.title"}}</h3>
+    <p>{{t "about.software.body"}}</p>
+    <h3>{{t "home.work.guides.title"}}</h3>
+    <p>{{t "about.guides.body"}}</p>
+    <h3>{{t "home.work.metadata.title"}}</h3>
+    <p>{{t "about.metadata.body"}}</p>
+  </section>
+
+  <section class="about-section">
+    <h2>{{t "about.site.title"}}</h2>
+    <p>{{t "about.site.body"}}</p>
+  </section>
+
+  <div class="cta-row about-cta">
+    <a class="btn" href="/{{.Lang}}/blog">{{t "home.cta.blog"}}</a>
+    <a class="btn" href="/{{.Lang}}/donate">{{t "nav.donate"}}</a>
+    <a class="btn" href="/{{.Lang}}/contact">{{t "nav.contact"}}</a>
+  </div>
 </article>
 {{end}}

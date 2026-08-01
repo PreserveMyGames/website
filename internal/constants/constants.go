@@ -3,12 +3,14 @@ package constants
 import "time"
 
 const (
-	AppName        = "PreserveMyGames"
+	AppName        = "Preserve My Games"
 	DefaultLocale  = "en"
 	LangCookieName = "lang"
 	AssetVersion   = "dev"
 	ContactEmail   = "contact@preservemygames.org"
 	ContactLXMF    = "f489752fbef161c64d65e385a4e9fc74"
+	DonateMonero   = "87wT8aCdaY2JLkVzkcwc8G8LqSy23PsFgPWnjKybVqg5ce6j2pLdYP1d6nm7qtpJgzfKqaQAiCfDZRqasJMnuCNN99jeduq"
+	DonateKoFiURL  = "https://ko-fi.com/preservemygames"
 
 	NoticeConstruction = "construction"
 	NoticeMaintenance  = "maintenance"

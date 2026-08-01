@@ -36,26 +36,25 @@
       </a>
       <nav class="site-nav" aria-label="{{t "nav.primary"}}">
         <a href="/{{.Lang}}/">{{t "nav.home"}}</a>
-        <a href="/{{.Lang}}/about">{{t "nav.about"}}</a>
         <a href="/{{.Lang}}/blog">{{t "nav.blog"}}</a>
         <a href="{{.WikiURL}}" rel="noopener noreferrer">{{t "nav.wiki"}}</a>
         <a href="{{.ForumsURL}}" rel="noopener noreferrer">{{t "nav.forums"}}</a>
+        <a href="/{{.Lang}}/donate">{{t "nav.donate"}}</a>
         <a href="/{{.Lang}}/contact">{{t "nav.contact"}}</a>
       </nav>
       <div class="header-tools">
         <div class="locale-menu-wrap" data-locale-menu>
           <button
             type="button"
-            class="locale-btn"
+            class="icon-btn locale-btn"
             data-locale-trigger
             aria-expanded="false"
             aria-controls="locale-panel"
             aria-haspopup="listbox"
+            aria-label="{{t "nav.language"}}"
             id="locale-trigger"
           >
-            <img class="locale-btn-icon" src="/static/vendor/feather/globe.svg" alt="" width="18" height="18">
-            <span class="locale-btn-label">{{range .Locales}}{{if .Current}}{{.Label}}{{end}}{{end}}</span>
-            <img class="locale-btn-chevron" src="/static/vendor/feather/chevron-down.svg" alt="" width="16" height="16">
+            <img class="locale-btn-icon" src="/static/vendor/feather/globe.svg" alt="" width="20" height="20">
           </button>
           <div
             class="locale-panel"
@@ -105,6 +104,7 @@
         <a href="/{{.Lang}}/blog">{{t "nav.blog"}}</a>
         <a href="/{{.Lang}}/blog/rss.xml">{{t "footer.rss"}}</a>
         <a href="/{{.Lang}}/privacy">{{t "nav.privacy"}}</a>
+        <a href="/{{.Lang}}/donate">{{t "nav.donate"}}</a>
         <a href="/{{.Lang}}/contact">{{t "nav.contact"}}</a>
       </nav>
       <p class="footer-copy">{{t "footer.copyright"}}</p>
