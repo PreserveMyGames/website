@@ -315,6 +315,30 @@ a:hover {
   line-height: 1.65;
 }
 
+.empty-state {
+  margin: 2rem 0;
+  padding: 2rem 1.25rem;
+  border: 1px dashed var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  text-align: center;
+}
+
+.empty-state-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.empty-state-body {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
 .icon-btn {
   border: none;
   background: transparent;

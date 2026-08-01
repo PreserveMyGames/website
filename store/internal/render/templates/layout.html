@@ -1,0 +1,79 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html lang="{{.Lang}}" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{.Title}}</title>
+  <meta name="description" content="{{.Description}}">
+  {{if .RefreshSeconds}}<meta http-equiv="refresh" content="{{.RefreshSeconds}}">{{end}}
+  {{if .FeedPath}}<link rel="alternate" type="application/rss+xml" title="{{.Title}}" href="{{.FeedPath}}">{{end}}
+  <link rel="stylesheet" href="/static/css/site.css?v={{.AssetVersion}}">
+</head>
+<body>
+  <a class="skip-link" href="#main">{{t "a11y.skip_to_content"}}</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/{{.Lang}}/">{{t "site.name"}}</a>
+      <nav class="site-nav" aria-label="{{t "nav.primary"}}">
+        <a href="/{{.Lang}}/">{{t "nav.catalog"}}</a>
+        <a href="/{{.Lang}}/search">{{t "nav.search"}}</a>
+      </nav>
+      <div class="header-tools">
+        <details class="currency-menu">
+          <summary><span class="sr-only">{{t "nav.currency"}}</span>{{.Currency}}</summary>
+          <div class="currency-panel">
+            {{range .Currencies}}
+            <a href="?currency={{.}}">{{.}}</a>
+            {{end}}
+          </div>
+        </details>
+        <noscript>
+          <nav class="locale-fallback" aria-label="{{t "nav.language"}}">
+            {{range .Locales}}
+            {{if .Current}}<span lang="{{.Code}}">{{.Label}}</span>{{else}}
+            <a href="{{.URL}}" hreflang="{{.Code}}" lang="{{.Code}}">{{.Label}}</a>{{end}}
+            {{end}}
+          </nav>
+        </noscript>
+        <details class="locale-menu">
+          <summary>
+            <img src="/static/vendor/feather/globe.svg" alt="" width="18" height="18">
+            <span class="sr-only">{{t "nav.language"}}</span>
+          </summary>
+          <div class="locale-panel">
+            {{range .Locales}}
+            {{if .Current}}
+            <span class="locale-option is-current" lang="{{.Code}}">{{.Label}}</span>
+            {{else}}
+            <a class="locale-option" href="{{.URL}}" hreflang="{{.Code}}" lang="{{.Code}}">{{.Label}}</a>
+            {{end}}
+            {{end}}
+          </div>
+        </details>
+        <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="{{t "theme.toggle"}}">
+          <img class="icon-sun" src="/static/vendor/feather/sun.svg" alt="" width="20" height="20">
+          <img class="icon-moon" src="/static/vendor/feather/moon.svg" alt="" width="20" height="20">
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="site-main">
+    <div class="wrap">{{.Body}}</div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-tagline">{{t "site.tagline"}}</p>
+      <nav class="footer-nav" aria-label="{{t "nav.footer"}}">
+        <a href="/{{.Lang}}/">{{t "nav.catalog"}}</a>
+        <a href="/{{.Lang}}/search">{{t "nav.search"}}</a>
+        <a href="/{{.Lang}}/rss.xml">{{t "footer.rss"}}</a>
+      </nav>
+      <p class="footer-copy">{{t "footer.copyright"}}</p>
+    </div>
+  </footer>
+  <script src="/static/js/theme.js?v={{.AssetVersion}}" defer></script>
+  {{if .IncludeCatalogSearchJS}}<script src="/static/js/catalog-search.js?v={{.AssetVersion}}" defer></script>{{end}}
+</body>
+</html>
+{{end}}

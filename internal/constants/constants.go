@@ -27,6 +27,7 @@ const (
 	EnvAccessLog         = "ACCESS_LOG"
 	EnvSiteNotice        = "SITE_NOTICE"
 	EnvSiteNoticeMessage = "SITE_NOTICE_MESSAGE"
+	EnvStoreURL          = "STORE_URL"
 	EnvProduction        = "production"
 	EnvDevelopment       = "development"
 

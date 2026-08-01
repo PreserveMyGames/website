@@ -1,0 +1,5 @@
+ALTER TABLE products ADD COLUMN category TEXT NOT NULL DEFAULT '';
+ALTER TABLE products ADD COLUMN tags TEXT NOT NULL DEFAULT '[]';
+ALTER TABLE products ADD COLUMN sku TEXT NOT NULL DEFAULT '';
+
+CREATE INDEX IF NOT EXISTS idx_products_category ON products(category);

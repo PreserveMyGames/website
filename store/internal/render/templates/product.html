@@ -1,0 +1,53 @@
+{{define "product-content"}}
+<article class="page product">
+  <header class="product-header">
+    <p class="eyebrow">{{.ProductTypeLabel}}{{if .Product.Category}} · <a href="/{{.Lang}}/category/{{.Product.Category}}">{{.Product.Category}}</a>{{end}}</p>
+    <h1>{{.Product.Title}}</h1>
+  </header>
+  <p class="lead">{{.Product.Description}}</p>
+  <dl class="product-meta">
+    <div>
+      <dt>{{t "product.price"}}</dt>
+      <dd class="price">{{.DisplayPrice}}{{if .ReferencePrice}} <span class="muted">({{.ReferencePrice}})</span>{{end}}</dd>
+    </div>
+    <div>
+      <dt>{{t "product.stock"}}</dt>
+      <dd>{{.StockLabel}}</dd>
+    </div>
+    {{if .Product.SKU}}
+    <div>
+      <dt>{{t "product.sku"}}</dt>
+      <dd><code>{{.Product.SKU}}</code></dd>
+    </div>
+    {{end}}
+  </dl>
+  {{if .Product.Tags}}
+  <ul class="tag-list tag-list--product" aria-label="{{t "product.tags"}}">
+    {{range .Product.Tags}}
+    <li><a href="/{{$.Lang}}/tag/{{.}}">#{{.}}</a></li>
+    {{end}}
+  </ul>
+  {{end}}
+  {{if .OutOfStock}}
+    {{template "empty-state" .}}
+  {{else}}
+    <div class="cta-row">
+      {{if .StripeEnabled}}
+      <form method="post" action="/{{.Lang}}/checkout/stripe">
+        <input type="hidden" name="slug" value="{{.Product.Slug}}">
+        <button class="btn primary" type="submit">{{t "product.buy_stripe"}}</button>
+      </form>
+      {{end}}
+      {{if .MoneroEnabled}}
+      <form method="post" action="/{{.Lang}}/checkout/monero">
+        <input type="hidden" name="slug" value="{{.Product.Slug}}">
+        <button class="btn" type="submit">{{t "product.buy_monero"}}</button>
+      </form>
+      {{end}}
+      {{if and (not .StripeEnabled) (not .MoneroEnabled)}}
+      <p class="muted">{{t "checkout.unavailable"}}</p>
+      {{end}}
+    </div>
+  {{end}}
+</article>
+{{end}}

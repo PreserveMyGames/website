@@ -8,7 +8,7 @@
     <a class="blog-feed-link" href="/{{.Lang}}/blog/rss.xml">{{t "footer.rss"}}</a>
   </header>
   {{if not .Posts}}
-    <p>{{t "blog.empty"}}</p>
+    {{template "empty-state" .}}
   {{else}}
     <div class="blog-toolbar">
       <form

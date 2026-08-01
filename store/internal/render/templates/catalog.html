@@ -1,0 +1,67 @@
+{{define "catalog-content"}}
+<article class="page catalog-index">
+  <header class="page-header">
+    <h1>{{.CatalogTitle}}</h1>
+    <p class="lead">{{.CatalogLead}}</p>
+    {{if .Categories}}
+    <nav class="taxonomy-nav" aria-label="{{t "catalog.categories"}}">
+      <a class="taxonomy-chip{{if not .ActiveCategory}} is-active{{end}}" href="/{{.Lang}}/">{{t "catalog.all"}}</a>
+      {{range .Categories}}
+      <a class="taxonomy-chip{{if eq $.ActiveCategory .}} is-active{{end}}" href="/{{$.Lang}}/category/{{.}}">{{.}}</a>
+      {{end}}
+    </nav>
+    {{end}}
+    {{if .Tags}}
+    <nav class="taxonomy-nav taxonomy-nav--tags" aria-label="{{t "catalog.tags"}}">
+      {{range .Tags}}
+      <a class="taxonomy-chip taxonomy-chip--tag{{if eq $.ActiveTag .}} is-active{{end}}" href="/{{$.Lang}}/tag/{{.}}">#{{.}}</a>
+      {{end}}
+    </nav>
+    {{end}}
+  </header>
+  {{if not .Products}}
+    {{template "empty-state" .}}
+  {{else}}
+    {{if .ShowCatalogSearch}}
+    <div class="catalog-toolbar">
+      <form class="catalog-search-form" method="get" action="/{{.Lang}}/search" role="search" data-catalog-search-form>
+        <div class="catalog-search-field">
+          <img class="catalog-search-icon" src="/static/vendor/feather/search.svg" alt="" width="18" height="18">
+          <label class="sr-only" for="catalog-q">{{t "search.placeholder"}}</label>
+          <input
+            id="catalog-q"
+            name="q"
+            type="search"
+            value="{{.Query}}"
+            placeholder="{{t "search.placeholder"}}"
+            autocomplete="off"
+            data-catalog-search-input
+            enterkeyhint="search"
+          >
+        </div>
+        <a class="catalog-search-site" href="/{{.Lang}}/search">{{t "search.full"}}</a>
+      </form>
+    </div>
+    <p class="catalog-search-status" id="catalog-search-status" hidden aria-live="polite"></p>
+    <p class="catalog-search-empty" id="catalog-search-empty" hidden>{{t "search.no_results"}}</p>
+    {{end}}
+    <div class="card-grid" id="catalog-product-list" data-match-one="{{t "search.match_one"}}" data-match-many="{{t "search.match_many"}}">
+      {{range .Products}}
+      <a class="product-card catalog-product-item" href="/{{$.Lang}}/{{.Slug}}" data-search="{{.Title}} {{.Description}} {{.Category}} {{.SKU}}{{range .Tags}} {{.}}{{end}}">
+        {{if .Category}}<p class="eyebrow">{{.Category}}</p>{{end}}
+        <h2>{{.Title}}</h2>
+        <p>{{.Description}}</p>
+        {{if .Tags}}
+        <ul class="tag-list" aria-label="{{t "product.tags"}}">
+          {{range .Tags}}<li>#{{.}}</li>{{end}}
+        </ul>
+        {{end}}
+        <p class="price">{{.DisplayPrice}}</p>
+        {{if .ReferencePrice}}<p class="muted">{{.ReferencePrice}}</p>{{end}}
+        {{if .OutOfStock}}<p class="badge">{{t "product.out_of_stock"}}</p>{{end}}
+      </a>
+      {{end}}
+    </div>
+  {{end}}
+</article>
+{{end}}

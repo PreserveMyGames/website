@@ -52,15 +52,22 @@ type PageView struct {
 	ContactLXMF         string
 	DonateMonero        string
 	DonateKoFiURL       string
+	StoreURL            string
 	IncludeSearchJS     bool
 	IncludeBlogSearchJS bool
 	Posts               []blog.Post
 	Post                blogPostView
 	Query               string
 	Results             []blog.SearchEntry
+	EmptyState          *EmptyStateView
 	ErrorStatus         int
 	ErrorTitle          string
 	ErrorLead           string
+}
+
+type EmptyStateView struct {
+	Title string
+	Body  string
 }
 
 type LocaleOption struct {
@@ -267,6 +274,7 @@ func (s *Server) donate(w http.ResponseWriter, r *http.Request, lang string) {
 func (s *Server) populateLayout(lang string, view *PageView) {
 	view.WikiURL = s.cfg.WikiURL()
 	view.ForumsURL = s.cfg.ForumsURL()
+	view.StoreURL = s.cfg.StoreURL()
 	view.DonateMonero = constants.DonateMonero
 	view.DonateKoFiURL = constants.DonateKoFiURL
 	view.Notice = s.siteNotice(lang)
@@ -289,15 +297,23 @@ func (s *Server) siteNotice(lang string) *SiteNoticeView {
 func (s *Server) blogIndex(w http.ResponseWriter, r *http.Request, lang string) {
 	title := s.i18n.T(lang, "blog.title") + " | " + s.i18n.T(lang, "site.name")
 	desc := s.i18n.T(lang, "site.tagline")
-	s.renderPage(w, r, "blog_index-content", PageView{
+	posts := s.blog.Posts(lang)
+	view := PageView{
 		Lang:                lang,
 		Meta:                seo.Page(s.cfg.SiteURL, lang, "blog", title, desc, s.cachedAlternates("blog")),
 		PagePath:            "blog",
 		AssetVersion:        assetVersion,
 		IncludeBlogSearchJS: true,
 		Query:               strings.TrimSpace(r.URL.Query().Get("q")),
-		Posts:               s.blog.Posts(lang),
-	})
+		Posts:               posts,
+	}
+	if len(posts) == 0 {
+		view.EmptyState = &EmptyStateView{
+			Title: s.i18n.T(lang, "blog.empty.title"),
+			Body:  s.i18n.T(lang, "blog.empty.body"),
+		}
+	}
+	s.renderPage(w, r, "blog_index-content", view)
 }
 
 func (s *Server) blogPost(w http.ResponseWriter, r *http.Request, lang string) {

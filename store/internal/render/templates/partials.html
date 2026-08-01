@@ -1,0 +1,6 @@
+{{define "empty-state"}}
+<div class="empty-state" role="status">
+  {{if .EmptyState.Title}}<p class="empty-state-title">{{.EmptyState.Title}}</p>{{end}}
+  {{if .EmptyState.Body}}<p class="empty-state-body">{{.EmptyState.Body}}</p>{{end}}
+</div>
+{{end}}

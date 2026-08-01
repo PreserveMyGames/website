@@ -16,6 +16,7 @@ type Config struct {
 	AccessLog         bool
 	SiteNotice        string
 	SiteNoticeMessage string
+	StoreURLOverride  string
 }
 
 func Load() Config {
@@ -27,6 +28,7 @@ func Load() Config {
 		AccessLog:         envBool(constants.EnvAccessLog, false),
 		SiteNotice:        strings.ToLower(strings.TrimSpace(envOr(constants.EnvSiteNotice, ""))),
 		SiteNoticeMessage: strings.TrimSpace(envOr(constants.EnvSiteNoticeMessage, "")),
+		StoreURLOverride:  strings.TrimRight(strings.TrimSpace(envOr(constants.EnvStoreURL, "")), "/"),
 	}
 }
 

@@ -1,0 +1,51 @@
+{{define "admin-content"}}
+<article class="page">
+  <h1>{{t "admin.title"}}</h1>
+  <section class="admin-section">
+    <h2>{{t "admin.stock"}}</h2>
+    <table class="admin-table">
+      <thead><tr><th>Slug</th><th>Title</th><th>Stock</th><th></th></tr></thead>
+      <tbody>
+      {{range .Products}}
+      <tr>
+        <td>{{.Slug}}</td>
+        <td>{{.Title}}</td>
+        <td>{{.StockLabel}}</td>
+        <td>
+          <form method="post" action="/internal/stock" class="inline-form">
+            <input type="hidden" name="slug" value="{{.Slug}}">
+            <input type="number" name="stock" min="0" value="{{.StockValue}}">
+            <button type="submit">{{t "admin.update_stock"}}</button>
+          </form>
+        </td>
+      </tr>
+      {{end}}
+      </tbody>
+    </table>
+  </section>
+  <section class="admin-section">
+    <h2>{{t "admin.title"}}</h2>
+    <table class="admin-table">
+      <thead><tr><th>ID</th><th>Status</th><th>Method</th><th>Total</th><th></th></tr></thead>
+      <tbody>
+      {{range .Orders}}
+      <tr>
+        <td><a href="/{{$.Lang}}/order/{{.ID}}">{{.ID}}</a></td>
+        <td>{{.Status}}</td>
+        <td>{{.PaymentMethod}}</td>
+        <td>{{.TotalCents}}</td>
+        <td>
+          {{if eq .Status "awaiting_fulfillment"}}
+          <form method="post" action="/internal/ship">
+            <input type="hidden" name="order_id" value="{{.ID}}">
+            <button type="submit">{{t "admin.mark_shipped"}}</button>
+          </form>
+          {{end}}
+        </td>
+      </tr>
+      {{end}}
+      </tbody>
+    </table>
+  </section>
+</article>
+{{end}}

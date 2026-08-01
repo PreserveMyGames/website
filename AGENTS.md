@@ -20,6 +20,7 @@ Supported locales: `en`, `de`, `ru` (discovered from `internal/i18n/locales/*.js
 | `internal/staticfiles/static/` | Embedded CSS, JS, vendored assets |
 | `docker/` | Dockerfile and compose files |
 | `scripts/vendor.sh` | Download vendored frontend assets |
+| `store/` | Independent store subproject (own `go.mod`, deployed at store.preservemygames.org). See [`store/AGENTS.md`](store/AGENTS.md). |
 
 ## Commands
 
@@ -78,10 +79,16 @@ Create `internal/blog/content/blog/{locale}/slug.md` with YAML front matter (`ti
 | `SITE_URL` | `http://localhost:8080` | Canonical URL for SEO and feeds |
 | `CONTACT_EMAIL` | `contact@preservemygames.org` | Contact page |
 | `ACCESS_LOG` | `false` | Request logging |
+| `STORE_URL` | derived from `SITE_URL` host | External store nav link (default `https://store.<host>`) |
+
+## Independent store
+
+The commerce app lives under [`store/`](store/) as a separate Go module with its own database, payments, Docker image, and docs. The main website only links to it. See [`store/AGENTS.md`](store/AGENTS.md) and [`store/README.md`](store/README.md).
 
 ## What not to do
 
-- Do not add databases or external runtime dependencies.
+- Do not add databases or external runtime dependencies to the main website (the `store/` subproject is intentionally separate and may).
 - Do not load assets from CDNs in production templates.
 - Do not register locales manually in Go when JSON files suffice.
 - Do not edit generated plan files outside this repo unless asked.
+- Do not import the store module from the main website, or the website module from the store.

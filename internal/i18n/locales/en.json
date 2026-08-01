@@ -20,6 +20,10 @@
     "translation": "Blog"
   },
   {
+    "id": "nav.store",
+    "translation": "Store"
+  },
+  {
     "id": "nav.wiki",
     "translation": "Wiki"
   },
@@ -318,6 +322,14 @@
   {
     "id": "blog.empty",
     "translation": "No posts yet."
+  },
+  {
+    "id": "blog.empty.title",
+    "translation": "No posts yet"
+  },
+  {
+    "id": "blog.empty.body",
+    "translation": "New writing will show up here when it is published."
   },
   {
     "id": "blog.by",

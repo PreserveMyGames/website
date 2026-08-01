@@ -1,0 +1,29 @@
+{{define "order-content"}}
+<article class="page">
+  <h1>{{t "order.title"}} {{.Order.ID}}</h1>
+  <p class="lead">{{.StatusLabel}}</p>
+  <ul class="order-items">
+    {{range .Order.Items}}
+    <li>{{.Title}} x{{.Qty}}</li>
+    {{end}}
+  </ul>
+  {{if .MoneroAddress}}
+  <section class="monero-invoice">
+    <p>{{t "order.monero.address"}}</p>
+    <code class="address">{{.MoneroAddress}}</code>
+    <p>{{t "order.monero.amount"}}: <strong>{{.MoneroAmount}}</strong> XMR</p>
+    {{if .QRDataURI}}<img class="qr" src="{{.QRDataURI}}" alt="Monero payment QR code" width="220" height="220">{{end}}
+    {{if .ExpiresAt}}<p class="muted">{{t "order.monero.expires"}}: {{.ExpiresAt}}</p>{{end}}
+    <p class="muted">{{t "order.monero.refresh"}}</p>
+  </section>
+  {{end}}
+  {{if .DigitalReady}}
+  <section>
+    <p>{{t "order.digital.ready"}}</p>
+    {{range .DigitalLinks}}
+    <p><a class="btn primary" href="{{.}}">{{t "order.digital.link"}}</a></p>
+    {{end}}
+  </section>
+  {{end}}
+</article>
+{{end}}

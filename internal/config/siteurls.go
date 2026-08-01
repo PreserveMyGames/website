@@ -23,6 +23,13 @@ func (c Config) ForumsURL() string {
 	return "https://forums." + c.SiteHost()
 }
 
+func (c Config) StoreURL() string {
+	if c.StoreURLOverride != "" {
+		return c.StoreURLOverride
+	}
+	return "https://store." + c.SiteHost()
+}
+
 func (c Config) NoticeKind() string {
 	kind := strings.ToLower(strings.TrimSpace(c.SiteNotice))
 	switch kind {

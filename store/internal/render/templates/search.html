@@ -1,0 +1,33 @@
+{{define "search-content"}}
+<article class="page">
+  <header class="page-header">
+    <h1>{{t "search.title"}}</h1>
+    <p class="lead">{{t "search.lead"}}</p>
+  </header>
+  <form class="catalog-search-form" method="get" action="/{{.Lang}}/search" role="search">
+    <div class="catalog-search-field">
+      <img class="catalog-search-icon" src="/static/vendor/feather/search.svg" alt="" width="18" height="18">
+      <label class="sr-only" for="search-q">{{t "search.placeholder"}}</label>
+      <input id="search-q" name="q" type="search" value="{{.Query}}" placeholder="{{t "search.placeholder"}}" autocomplete="off" enterkeyhint="search">
+    </div>
+    <button class="btn primary" type="submit">{{t "search.submit"}}</button>
+  </form>
+  {{if .Query}}
+    {{if not .Products}}
+      {{template "empty-state" .}}
+    {{else}}
+    <p class="muted search-results-count">{{.ResultsCount}}</p>
+    <div class="card-grid">
+      {{range .Products}}
+      <a class="product-card" href="/{{$.Lang}}/{{.Slug}}">
+        {{if .Category}}<p class="eyebrow">{{.Category}}</p>{{end}}
+        <h2>{{.Title}}</h2>
+        <p>{{.Description}}</p>
+        <p class="price">{{.DisplayPrice}}</p>
+      </a>
+      {{end}}
+    </div>
+    {{end}}
+  {{end}}
+</article>
+{{end}}

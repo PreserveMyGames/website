@@ -20,6 +20,10 @@
     "translation": "Блог"
   },
   {
+    "id": "nav.store",
+    "translation": "Магазин"
+  },
+  {
     "id": "nav.wiki",
     "translation": "Вики"
   },
@@ -318,6 +322,14 @@
   {
     "id": "blog.empty",
     "translation": "Пока нет записей."
+  },
+  {
+    "id": "blog.empty.title",
+    "translation": "Пока нет записей"
+  },
+  {
+    "id": "blog.empty.body",
+    "translation": "Новые материалы появятся здесь после публикации."
   },
   {
     "id": "blog.by",

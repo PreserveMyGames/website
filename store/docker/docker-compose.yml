@@ -1,0 +1,56 @@
+services:
+  store:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8081:8080"
+    environment:
+      PORT: "8080"
+      APP_ENV: development
+      SITE_URL: http://localhost:8081
+      DATA_DIR: /data
+      MAIN_SITE_URL: https://preservemygames.org
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      MONERO_RPC_URL: ${MONERO_RPC_URL:-http://monero-wallet-rpc:18083}
+      MONERO_RPC_USER: ${MONERO_RPC_USER:-}
+      MONERO_RPC_PASS: ${MONERO_RPC_PASS:-}
+      MONERO_MIN_CONFIRMATIONS: "10"
+      ADMIN_USER: ${ADMIN_USER:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+    volumes:
+      - store-data:/data
+    depends_on:
+      - monero-wallet-rpc
+    restart: unless-stopped
+
+  monerod:
+    image: sethsimmons/simple-monerod:latest
+    command:
+      - --rpc-bind-ip=0.0.0.0
+      - --confirm-external-bind
+      - --prune-blockchain
+      - --no-igd
+    volumes:
+      - monero-node:/home/monero/.bitmonero
+    restart: unless-stopped
+
+  monero-wallet-rpc:
+    image: sethsimmons/simple-monero-wallet-rpc:latest
+    command:
+      - --daemon-address=monerod:18081
+      - --rpc-bind-ip=0.0.0.0
+      - --confirm-external-bind
+      - --wallet-dir=/wallet
+      - --disable-rpc-login
+    volumes:
+      - monero-wallet:/wallet
+    depends_on:
+      - monerod
+    restart: unless-stopped
+
+volumes:
+  store-data:
+  monero-node:
+  monero-wallet:
