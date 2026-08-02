@@ -32,6 +32,10 @@
     "translation": "Forums"
   },
   {
+    "id": "nav.files",
+    "translation": "Files"
+  },
+  {
     "id": "nav.search",
     "translation": "Search"
   },

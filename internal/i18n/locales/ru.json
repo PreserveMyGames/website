@@ -32,6 +32,10 @@
     "translation": "Форум"
   },
   {
+    "id": "nav.files",
+    "translation": "Файлы"
+  },
+  {
     "id": "nav.search",
     "translation": "Поиск"
   },

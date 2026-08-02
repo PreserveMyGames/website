@@ -13,6 +13,9 @@ func TestSiteHostAndSubdomains(t *testing.T) {
 	if cfg.ForumsURL() != "https://forums.preservemygames.org" {
 		t.Fatalf("forums: got %q", cfg.ForumsURL())
 	}
+	if cfg.FilesURL() != "https://files.preservemygames.org" {
+		t.Fatalf("files: got %q", cfg.FilesURL())
+	}
 }
 
 func TestNoticeKind(t *testing.T) {

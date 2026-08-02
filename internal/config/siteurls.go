@@ -23,6 +23,10 @@ func (c Config) ForumsURL() string {
 	return "https://forums." + c.SiteHost()
 }
 
+func (c Config) FilesURL() string {
+	return "https://files." + c.SiteHost()
+}
+
 func (c Config) StoreURL() string {
 	if c.StoreURLOverride != "" {
 		return c.StoreURLOverride

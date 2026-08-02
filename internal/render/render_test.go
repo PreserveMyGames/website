@@ -35,6 +35,7 @@ func TestEngineExecuteLayout(t *testing.T) {
 		AssetVersion        string
 		WikiURL             string
 		ForumsURL           string
+		FilesURL            string
 		StoreURL            string
 		Notice              any
 		IncludeSearchJS     bool
@@ -50,6 +51,7 @@ func TestEngineExecuteLayout(t *testing.T) {
 		AssetVersion: "1",
 		WikiURL:      "https://wiki.example.com",
 		ForumsURL:    "https://forums.example.com",
+		FilesURL:     "https://files.example.com",
 		StoreURL:     "https://store.example.com",
 		Locales: []struct {
 			Code, Label, URL string

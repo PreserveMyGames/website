@@ -46,6 +46,7 @@ type PageView struct {
 	AssetVersion        string
 	WikiURL             string
 	ForumsURL           string
+	FilesURL            string
 	Notice              *SiteNoticeView
 	ContactEmail        string
 	ContactBody         string
@@ -274,6 +275,7 @@ func (s *Server) donate(w http.ResponseWriter, r *http.Request, lang string) {
 func (s *Server) populateLayout(lang string, view *PageView) {
 	view.WikiURL = s.cfg.WikiURL()
 	view.ForumsURL = s.cfg.ForumsURL()
+	view.FilesURL = s.cfg.FilesURL()
 	view.StoreURL = s.cfg.StoreURL()
 	view.DonateMonero = constants.DonateMonero
 	view.DonateKoFiURL = constants.DonateKoFiURL

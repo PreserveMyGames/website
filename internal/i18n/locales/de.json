@@ -32,6 +32,10 @@
     "translation": "Foren"
   },
   {
+    "id": "nav.files",
+    "translation": "Dateien"
+  },
+  {
     "id": "nav.search",
     "translation": "Suche"
   },

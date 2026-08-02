@@ -25,6 +25,9 @@ func TestNavExternalLinks(t *testing.T) {
 	if !strings.Contains(body, `href="https://forums.example.com"`) {
 		t.Fatal("expected forums link in navbar")
 	}
+	if !strings.Contains(body, `href="https://files.example.com"`) {
+		t.Fatal("expected files link in navbar")
+	}
 	if strings.Contains(body, `href="https://store.example.com"`) {
 		t.Fatal("store link should not appear in navbar")
 	}
