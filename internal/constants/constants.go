@@ -46,6 +46,8 @@ const (
 	HeaderContentType       = "Content-Type"
 	HeaderContentLength     = "Content-Length"
 	HeaderCacheControl      = "Cache-Control"
+	HeaderPragma            = "Pragma"
+	HeaderExpires           = "Expires"
 
 	CSPPolicy = "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'"
 	Nosniff   = "nosniff"
@@ -55,7 +57,7 @@ const (
 	HSTS      = "max-age=31536000; includeSubDomains"
 
 	StaticCacheControl = "public, max-age=31536000, immutable"
-	PageCacheControl   = "no-cache"
+	PageCacheControl   = "no-store"
 	DevCacheControl    = "no-cache"
 	SearchCacheControl = "public, max-age=300"
 

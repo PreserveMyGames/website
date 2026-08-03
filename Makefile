@@ -5,7 +5,7 @@ IMAGE := preservemygames/website:latest
 DOCKERFILE := docker/Dockerfile
 COMPOSE := docker compose -f docker/docker-compose.yml
 GOSEC := $(shell go env GOPATH)/bin/gosec
-VERSION ?= $(shell git rev-parse --short=12 HEAD 2>/dev/null || echo dev)
+VERSION ?= $(shell ./scripts/build-version.sh)
 LDFLAGS := -s -w -X github.com/PreserveMyGames/website/internal/web.assetVersion=$(VERSION)
 
 .PHONY: build run test test-race test-fuzz bench vet fmt fix tidy vendor gosec docker-build docker-up docker-down docker-test ci

@@ -212,6 +212,12 @@ func TestPageCacheControl(t *testing.T) {
 	if got := rec.Header().Get(constants.HeaderCacheControl); got != constants.PageCacheControl {
 		t.Fatalf("page cache-control: got %q want %q", got, constants.PageCacheControl)
 	}
+	if got := rec.Header().Get(constants.HeaderPragma); got != "no-cache" {
+		t.Fatalf("page pragma: got %q want no-cache", got)
+	}
+	if got := rec.Header().Get(constants.HeaderExpires); got != "0" {
+		t.Fatalf("page expires: got %q want 0", got)
+	}
 }
 
 func TestStaticDevCacheControl(t *testing.T) {

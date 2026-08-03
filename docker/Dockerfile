@@ -13,12 +13,19 @@ COPY . .
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
-ARG VERSION=dev
-RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build \
-  -trimpath \
-  -ldflags="-s -w -X github.com/PreserveMyGames/website/internal/web.assetVersion=${VERSION}" \
-  -o /out/web \
-  ./cmd/web
+ARG VERSION=
+RUN set -eux; \
+  BUILD_VERSION="${VERSION}"; \
+  if [ -z "${BUILD_VERSION}" ]; then BUILD_VERSION="$(git rev-parse --short=12 HEAD 2>/dev/null || echo dev)"; fi; \
+  CONTENT_HASH="$(find internal/i18n internal/render/templates internal/staticfiles/static -type f ! -path '*/.*' | LC_ALL=C sort | xargs sha256sum | sha256sum | awk '{print substr($1, 1, 12)}')"; \
+  if [ -z "${CONTENT_HASH}" ]; then CONTENT_HASH="nocontent"; fi; \
+  FULL_VERSION="${BUILD_VERSION}-${CONTENT_HASH}"; \
+  echo "asset version: ${FULL_VERSION}"; \
+  CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build \
+    -trimpath \
+    -ldflags="-s -w -X github.com/PreserveMyGames/website/internal/web.assetVersion=${FULL_VERSION}" \
+    -o /out/web \
+    ./cmd/web
 
 FROM alpine:3.24@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b AS runtime
 

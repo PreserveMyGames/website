@@ -427,7 +427,7 @@ func (s *Server) renderPage(w http.ResponseWriter, r *http.Request, contentTempl
 	s.populateLayout(lang, &view)
 
 	w.Header().Set(constants.HeaderContentType, "text/html; charset=utf-8")
-	w.Header().Set(constants.HeaderCacheControl, constants.PageCacheControl)
+	setHTMLCacheHeaders(w)
 
 	err := engine.RenderPage(w, contentTemplate, "layout", &view, func(content []byte) {
 		view.Body = template.HTML(content)
@@ -480,6 +480,20 @@ func staticHandler(root fs.FS, production bool) http.Handler {
 		}
 		r2 := r.Clone(r.Context())
 		r2.URL.Path = "/" + p
+		if production {
+			inner.ServeHTTP(staticCacheWriter{w}, r2)
+			return
+		}
 		inner.ServeHTTP(w, r2)
 	})
+}
+
+type staticCacheWriter struct {
+	http.ResponseWriter
+}
+
+func (w staticCacheWriter) WriteHeader(status int) {
+	w.ResponseWriter.Header().Del("Etag")
+	w.ResponseWriter.Header().Del("Last-Modified")
+	w.ResponseWriter.WriteHeader(status)
 }

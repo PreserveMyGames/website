@@ -80,7 +80,7 @@ func (s *Server) writeError(w http.ResponseWriter, r *http.Request, status int, 
 	view.Locales = s.cachedLocales(lang, view.PagePath)
 	s.populateLayout(lang, &view)
 	w.Header().Set(constants.HeaderContentType, "text/html; charset=utf-8")
-	w.Header().Set(constants.HeaderCacheControl, constants.PageCacheControl)
+	setHTMLCacheHeaders(w)
 	w.WriteHeader(status)
 
 	if err := engine.RenderPage(w, "error-content", "layout", &view, func(content []byte) {
