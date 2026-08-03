@@ -89,11 +89,11 @@
   },
   {
     "id": "home.headline",
-    "translation": "Spiele verdienen ein dauerhaftes Zuhause."
+    "translation": "Spiele, Mods und Server verdienen ein dauerhaftes Zuhause."
   },
   {
     "id": "home.lead",
-    "translation": "Wir bauen Software, schreiben Anleitungen und veröffentlichen Metadaten, damit Spiele spielbar bleiben. Module, Discs, PC-Releases, Emulatoren, was auch immer noch im Regal steht."
+    "translation": "Wir bauen Software, schreiben Anleitungen und veröffentlichen Metadaten, damit Spiele, Mods und Server spielbar bleiben. Module, Discs, PC-Releases, dedizierte Server, Emulatoren."
   },
   {
     "id": "home.cta.blog",
@@ -125,7 +125,7 @@
   },
   {
     "id": "home.work.software.body",
-    "translation": "Software für die Erhaltung von Spielen und Mods, plus Tools, die wir auf dem Weg bauen. Quellcode veröffentlichen wir, wenn wir das Projekt pflegen."
+    "translation": "Tools für Spiele, Mods und Server."
   },
   {
     "id": "home.work.guides.title",
@@ -133,7 +133,7 @@
   },
   {
     "id": "home.work.guides.body",
-    "translation": "Anleitungen zum Erhalten von Spielen, Mods und Medien. Für Leute, die die Arbeit selbst machen."
+    "translation": "Praktische Anleitungen zur Erhaltung, zum Spielbar-machen und zum Restaurieren oder Erstellen physischer Medien."
   },
   {
     "id": "home.work.metadata.title",
@@ -141,7 +141,7 @@
   },
   {
     "id": "home.work.metadata.body",
-    "translation": "Kostenlose, offene Spiele-Metadaten ohne Konto. Alternative zu IGDB und anderen geschlossenen Katalogen ohne vollen Export."
+    "translation": "Kostenlose, offene Spieldaten und selbst hostbar. Kein Konto nötig."
   },
   {
     "id": "home.elsewhere.title",

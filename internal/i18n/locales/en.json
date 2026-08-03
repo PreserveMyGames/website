@@ -89,11 +89,11 @@
   },
   {
     "id": "home.headline",
-    "translation": "Games deserve a lasting home."
+    "translation": "Games, mods, and servers deserve a lasting home."
   },
   {
     "id": "home.lead",
-    "translation": "We build software, write guides, and publish metadata so games stay playable. Cartridges, discs, PC releases, emulators, whatever you have in the closet."
+    "translation": "We build software, write guides, and publish metadata so games, mods, and servers stay playable. Cartridges, discs, PC releases, dedicated servers, emulators."
   },
   {
     "id": "home.cta.blog",
@@ -125,7 +125,7 @@
   },
   {
     "id": "home.work.software.body",
-    "translation": "Software for game and mod preservation, and related tools we build along the way. We publish source when we maintain the project."
+    "translation": "Tools for preserving games, mods, and servers."
   },
   {
     "id": "home.work.guides.title",
@@ -133,7 +133,7 @@
   },
   {
     "id": "home.work.guides.body",
-    "translation": "How-to guides for preserving games, mods, and media. Written for people doing the work themselves."
+    "translation": "Practical how-tos for preservation, getting games working and restoring or creating physical media."
   },
   {
     "id": "home.work.metadata.title",
@@ -141,7 +141,7 @@
   },
   {
     "id": "home.work.metadata.body",
-    "translation": "Free and open game metadata with no account required. An alternative to IGDB and other closed catalogs you cannot fully export or reuse."
+    "translation": "Free, open game data and self-hostable. No account required."
   },
   {
     "id": "home.elsewhere.title",

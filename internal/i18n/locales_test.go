@@ -91,7 +91,7 @@ func TestGermanTranslation(t *testing.T) {
 		t.Fatalf("new: %v", err)
 	}
 	got := bundle.T("de", "home.headline")
-	if got != "Spiele verdienen ein dauerhaftes Zuhause." {
+	if got != "Spiele, Mods und Server verdienen ein dauerhaftes Zuhause." {
 		t.Fatalf("de headline: got %q", got)
 	}
 }
@@ -102,7 +102,7 @@ func TestRussianTranslation(t *testing.T) {
 		t.Fatalf("new: %v", err)
 	}
 	got := bundle.T("ru", "home.headline")
-	if got != "Игры заслуживают постоянного дома." {
+	if got != "Игры, моды и серверы заслуживают постоянного дома." {
 		t.Fatalf("ru headline: got %q", got)
 	}
 }
